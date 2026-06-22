@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="OnlineExamSystem.Tests/OnlineExamSystem.Tests.csproj" Id="fef0f518-cc70-4cd2-a3fc-337ed0a86878" />
+  <Project Path="OnlineExamSystem/OnlineExamSystem.csproj" />
+</Solution>

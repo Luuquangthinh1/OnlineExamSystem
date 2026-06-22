@@ -1,0 +1,270 @@
+﻿@model List<OnlineExamSystem.Models.QuestionBank>
+@using OnlineExamSystem.Models.Enums
+
+@{
+    ViewData["Title"] = "Ngân hàng câu hỏi";
+}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Ngân hàng câu hỏi
+    </h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    <form method="get"
+          class="row mb-4">
+
+        <div class="col-md-4">
+            <input type="text"
+                   name="search"
+                   class="form-control"
+                   placeholder="Tìm nội dung..." />
+        </div>
+
+        <div class="col-md-3">
+            <select name="type"
+                    class="form-select">
+
+                <option value="">
+                    -- Loại câu hỏi --
+                </option>
+
+                @foreach (var t in Enum.GetValues(typeof(QuestionType)))
+                {
+                    <option value="@t">
+                        @t
+                    </option>
+                }
+
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-primary">
+                Tìm kiếm
+            </button>
+        </div>
+
+        <div class="col-md-3 text-end">
+            <a asp-action="Create"
+               class="btn btn-success">
+                Thêm câu hỏi
+            </a>
+            <a asp-action="ExportWord"
+               class="btn btn-primary">
+                Export Word
+            </a>
+            <a asp-action="ExportPdf"
+               class="btn btn-danger">
+                Export PDF
+            </a>
+        </div>
+
+    </form>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>ID</th>
+                <th>Nội dung</th>
+                <th>Loại</th>
+                <th>Môn học</th>
+                <th>Độ khó</th>
+                <th width="180">
+                    Chức năng
+                </th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var q in Model)
+            {
+                var options =
+                    string.IsNullOrWhiteSpace(q.OptionsJson)
+                    ? new List<string>()
+                    : System.Text.Json.JsonSerializer
+                        .Deserialize<List<string>>(q.OptionsJson)
+                        ?? new List<string>();
+
+                var answers =
+                    string.IsNullOrWhiteSpace(q.CorrectAnswerJson)
+                    ? new List<string>()
+                    : System.Text.Json.JsonSerializer
+                        .Deserialize<List<string>>(q.CorrectAnswerJson)
+                        ?? new List<string>();
+
+                <tr>
+                    <td width="80">
+                        @q.Id
+                    </td>
+
+                    <td>
+
+                        <div class="fw-bold mb-2">
+                            @q.Content
+                        </div>
+
+                        @if (
+                            q.Type == QuestionType.SingleChoice
+                            ||
+                            q.Type == QuestionType.MultipleChoice)
+                        {
+                            <div class="mt-2">
+
+                                @{
+    var letters = new[] { "A", "B", "C", "D" };
+}
+
+@for (int i = 0; i < options.Count; i++)
+{
+    bool isCorrect =
+        answers.Any(a =>
+            a.Trim().Equals(
+                options[i].Trim(),
+                StringComparison.OrdinalIgnoreCase));
+
+    <div class="@(isCorrect
+            ? "text-success fw-bold"
+            : "")">
+
+        <strong>@letters[i].</strong>
+        @options[i]
+
+        @if (isCorrect)
+        {
+            <span class="ms-2 text-success fw-bold">
+                ✓
+            </span>
+        }
+
+    </div>
+}
+
+                            </div>
+                        }
+
+                        else if (q.Type == QuestionType.TrueFalse)
+                        {
+                            <div class="text-primary mt-2">
+                                Đáp án:
+                                @string.Join(", ", answers)
+                            </div>
+                        }
+
+                        else if (
+                            q.Type == QuestionType.FillBlank
+                            ||
+                            q.Type == QuestionType.Essay)
+                        {
+                            <div class="text-success mt-2">
+
+                                Đáp án:
+                                @string.Join(", ", answers)
+
+                            </div>
+                        }
+
+                        else if (q.Type == QuestionType.Matching)
+                        {
+                            <div class="mt-3">
+
+                                <table class="table table-bordered table-sm">
+
+                                    <thead class="table-light">
+
+                                        <tr>
+                                            <th width="50%">
+                                                Cột A
+                                            </th>
+
+                                            <th width="50%">
+                                                Cột B
+                                            </th>
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                        @{
+                                            int count =
+                                                Math.Min(
+                                                    options.Count,
+                                                    answers.Count);
+                                        }
+
+                                        @for (int i = 0; i < count; i++)
+                                        {
+                                            <tr>
+
+                                                <td>
+                                                    @options[i]
+                                                </td>
+
+                                                <td class="text-success fw-bold">
+                                                    @answers[i]
+                                                </td>
+
+                                            </tr>
+                                        }
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+                        }
+
+                    </td>
+
+                    <td width="180">
+                        @q.Type
+                    </td>
+
+                    <td width="150">
+                        @q.Subject
+                    </td>
+
+                    <td width="120">
+                        @q.Difficulty
+                    </td>
+
+                    <td width="180">
+
+                        <a asp-action="Edit"
+                           asp-route-id="@q.Id"
+                           class="btn btn-warning btn-sm">
+
+                            Sửa
+
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@q.Id"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Xóa câu hỏi?')">
+
+                            Xóa
+
+                        </a>
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>

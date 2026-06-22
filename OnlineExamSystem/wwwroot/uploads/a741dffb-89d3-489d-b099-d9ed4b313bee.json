@@ -1,0 +1,473 @@
+{
+  "title": "Lịch sử các kỳ World Cup bóng đá nam từ quá khứ đến hiện tại",
+  "duration": 90,
+  "totalScore": 10,
+  "maxAttempts": 1,
+  "maxWarnings": 3,
+  "questions": [
+    {
+      "id": 1,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Kỳ World Cup đầu tiên được tổ chức vào năm nào?",
+      "options": [
+        "1926",
+        "1930",
+        "1934",
+        "1938"
+      ],
+      "correctAnswer": "1930"
+    },
+    {
+      "id": 2,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Quốc gia nào đăng cai World Cup 1930?",
+      "options": [
+        "Brazil",
+        "Argentina",
+        "Uruguay",
+        "Ý"
+      ],
+      "correctAnswer": "Uruguay"
+    },
+    {
+      "id": 3,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển vô địch World Cup 1958 là đội nào?",
+      "options": [
+        "Đức",
+        "Brazil",
+        "Ý",
+        "Anh"
+      ],
+      "correctAnswer": "Brazil"
+    },
+    {
+      "id": 4,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Pele giành chức vô địch World Cup đầu tiên khi bao nhiêu tuổi?",
+      "options": [
+        "17",
+        "19",
+        "21",
+        "23"
+      ],
+      "correctAnswer": "17"
+    },
+    {
+      "id": 5,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển nào vô địch World Cup 1966?",
+      "options": [
+        "Brazil",
+        "Đức",
+        "Anh",
+        "Argentina"
+      ],
+      "correctAnswer": "Anh"
+    },
+    {
+      "id": 6,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Quốc gia nào giành nhiều chức vô địch World Cup nhất tính đến năm 2026?",
+      "options": [
+        "Đức",
+        "Argentina",
+        "Brazil",
+        "Ý"
+      ],
+      "correctAnswer": "Brazil"
+    },
+    {
+      "id": 7,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Diego Maradona nổi tiếng nhất ở kỳ World Cup nào?",
+      "options": [
+        "1978",
+        "1982",
+        "1986",
+        "1990"
+      ],
+      "correctAnswer": "1986"
+    },
+    {
+      "id": 8,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Bàn thắng “Bàn tay của Chúa” diễn ra ở World Cup nào?",
+      "options": [
+        "1978",
+        "1982",
+        "1986",
+        "1994"
+      ],
+      "correctAnswer": "1986"
+    },
+    {
+      "id": 9,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển vô địch World Cup 1998 là?",
+      "options": [
+        "Brazil",
+        "Pháp",
+        "Ý",
+        "Đức"
+      ],
+      "correctAnswer": "Pháp"
+    },
+    {
+      "id": 10,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Zinedine Zidane ghi bao nhiêu bàn trong trận chung kết World Cup 1998?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctAnswer": "2"
+    },
+    {
+      "id": 11,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "World Cup 2002 được tổ chức tại đâu?",
+      "options": [
+        "Nhật Bản",
+        "Hàn Quốc",
+        "Nhật Bản và Hàn Quốc",
+        "Trung Quốc"
+      ],
+      "correctAnswer": "Nhật Bản và Hàn Quốc"
+    },
+    {
+      "id": 12,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Vua phá lưới World Cup 2002 là ai?",
+      "options": [
+        "Ronaldinho",
+        "Ronaldo",
+        "Rivaldo",
+        "Klose"
+      ],
+      "correctAnswer": "Ronaldo"
+    },
+    {
+      "id": 13,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Đội tuyển Ý vô địch World Cup gần nhất vào năm nào?",
+      "options": [
+        "1998",
+        "2002",
+        "2006",
+        "2010"
+      ],
+      "correctAnswer": "2006"
+    },
+    {
+      "id": 14,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Sự kiện Zidane húc đầu Materazzi diễn ra ở World Cup nào?",
+      "options": [
+        "2002",
+        "2006",
+        "2010",
+        "2014"
+      ],
+      "correctAnswer": "2006"
+    },
+    {
+      "id": 15,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển vô địch World Cup 2010 là?",
+      "options": [
+        "Hà Lan",
+        "Đức",
+        "Tây Ban Nha",
+        "Brazil"
+      ],
+      "correctAnswer": "Tây Ban Nha"
+    },
+    {
+      "id": 16,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "World Cup 2010 được tổ chức tại châu lục nào?",
+      "options": [
+        "Châu Á",
+        "Châu Âu",
+        "Châu Phi",
+        "Nam Mỹ"
+      ],
+      "correctAnswer": "Châu Phi"
+    },
+    {
+      "id": 17,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển Đức đánh bại Brazil với tỷ số bao nhiêu tại bán kết World Cup 2014?",
+      "options": [
+        "5-0",
+        "6-1",
+        "7-1",
+        "8-0"
+      ],
+      "correctAnswer": "7-1"
+    },
+    {
+      "id": 18,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Ai ghi bàn quyết định trong trận chung kết World Cup 2014?",
+      "options": [
+        "Muller",
+        "Messi",
+        "Gotze",
+        "Klose"
+      ],
+      "correctAnswer": "Gotze"
+    },
+    {
+      "id": 19,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển vô địch World Cup 2018 là?",
+      "options": [
+        "Croatia",
+        "Pháp",
+        "Argentina",
+        "Bỉ"
+      ],
+      "correctAnswer": "Pháp"
+    },
+    {
+      "id": 20,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Luka Modric thi đấu cho đội tuyển nào tại World Cup 2018?",
+      "options": [
+        "Serbia",
+        "Croatia",
+        "Ba Lan",
+        "Slovenia"
+      ],
+      "correctAnswer": "Croatia"
+    },
+    {
+      "id": 21,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "World Cup 2022 được tổ chức ở quốc gia nào?",
+      "options": [
+        "Qatar",
+        "UAE",
+        "Saudi Arabia",
+        "Ai Cập"
+      ],
+      "correctAnswer": "Qatar"
+    },
+    {
+      "id": 22,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Argentina đánh bại đội nào ở chung kết World Cup 2022?",
+      "options": [
+        "Brazil",
+        "Đức",
+        "Pháp",
+        "Croatia"
+      ],
+      "correctAnswer": "Pháp"
+    },
+    {
+      "id": 23,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Lionel Messi giành chức vô địch World Cup đầu tiên vào năm nào?",
+      "options": [
+        "2014",
+        "2018",
+        "2022",
+        "2026"
+      ],
+      "correctAnswer": "2022"
+    },
+    {
+      "id": 24,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Cầu thủ ghi nhiều bàn thắng nhất lịch sử World Cup là ai?",
+      "options": [
+        "Pele",
+        "Miroslav Klose",
+        "Ronaldo",
+        "Messi"
+      ],
+      "correctAnswer": "Miroslav Klose"
+    },
+    {
+      "id": 25,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "World Cup nào lần đầu sử dụng công nghệ VAR?",
+      "options": [
+        "2010",
+        "2014",
+        "2018",
+        "2022"
+      ],
+      "correctAnswer": "2018"
+    },
+    {
+      "id": 26,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển nào vô địch World Cup 1974?",
+      "options": [
+        "Tây Đức",
+        "Brazil",
+        "Argentina",
+        "Hà Lan"
+      ],
+      "correctAnswer": "Tây Đức"
+    },
+    {
+      "id": 27,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Johan Cruyff nổi tiếng với đội tuyển nào tại World Cup?",
+      "options": [
+        "Bỉ",
+        "Đan Mạch",
+        "Hà Lan",
+        "Thụy Điển"
+      ],
+      "correctAnswer": "Hà Lan"
+    },
+    {
+      "id": 28,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển Argentina vô địch World Cup lần đầu vào năm nào?",
+      "options": [
+        "1978",
+        "1982",
+        "1986",
+        "1990"
+      ],
+      "correctAnswer": "1978"
+    },
+    {
+      "id": 29,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "World Cup 1994 được tổ chức tại quốc gia nào?",
+      "options": [
+        "Mỹ",
+        "Mexico",
+        "Brazil",
+        "Canada"
+      ],
+      "correctAnswer": "Mỹ"
+    },
+    {
+      "id": 30,
+      "type": "SingleChoice",
+      "level": "NhanBiet",
+      "score": 0.25,
+      "content": "Đội tuyển nào vô địch World Cup 1970?",
+      "options": [
+        "Brazil",
+        "Ý",
+        "Đức",
+        "Uruguay"
+      ],
+      "correctAnswer": "Brazil"
+    },
+    {
+      "id": 31,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "Ai được xem là cầu thủ xuất sắc nhất World Cup 2022?",
+      "options": [
+        "Mbappe",
+        "Messi",
+        "Modric",
+        "Neymar"
+      ],
+      "correctAnswer": "Messi"
+    },
+    {
+      "id": 32,
+      "type": "SingleChoice",
+      "level": "ThongHieu",
+      "score": 0.25,
+      "content": "World Cup 2026 sẽ có bao nhiêu đội tham dự?",
+      "options": [
+        "32",
+        "36",
+        "40",
+        "48"
+      ],
+      "correctAnswer": "48"
+    },
+    {
+      "id": 33,
+      "type": "Essay",
+      "level": "VanDung",
+      "score": 1,
+      "content": "Phân tích vai trò của Pele đối với lịch sử các kỳ World Cup.",
+      "answer": "Pele là một trong những cầu thủ vĩ đại nhất lịch sử World Cup. Ông giúp Brazil vô địch các năm 1958, 1962 và 1970. Pele nổi bật với kỹ thuật cá nhân, khả năng ghi bàn và tầm ảnh hưởng toàn cầu. Ông góp phần đưa bóng đá Brazil trở thành biểu tượng của bóng đá đẹp và truyền cảm hứng cho nhiều thế hệ cầu thủ."
+    },
+    {
+      "id": 34,
+      "type": "Essay",
+      "level": "VanDungCao",
+      "score": 1,
+      "content": "So sánh World Cup thời kỳ đầu với World Cup hiện đại về quy mô tổ chức, công nghệ và sức ảnh hưởng.",
+      "answer": "World Cup thời kỳ đầu có ít đội tham dự, điều kiện tổ chức còn hạn chế và chưa có công nghệ hỗ trợ trọng tài. Trong khi đó, World Cup hiện đại có quy mô toàn cầu với hàng tỷ khán giả theo dõi. Công nghệ VAR, goal-line và dữ liệu thống kê được áp dụng rộng rãi. Ngoài giá trị thể thao, World Cup hiện đại còn có ảnh hưởng lớn về kinh tế, truyền thông và văn hóa toàn cầu."
+    }
+  ]
+}

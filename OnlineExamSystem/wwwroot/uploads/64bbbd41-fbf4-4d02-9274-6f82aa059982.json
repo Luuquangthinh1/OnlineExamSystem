@@ -1,0 +1,281 @@
+{
+  "Title": "Lịch sử các kỳ World Cup bóng đá nam từ quá khứ đến hiện tại",
+  "Duration": 90,
+  "TotalScore": 10,
+  "MaxAttempts": 1,
+  "MaxWarnings": 3,
+  "Questions": [
+    {
+      "Content": "Kỳ World Cup đầu tiên được tổ chức vào năm nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"1926\",\"1930\",\"1934\",\"1938\"]",
+      "CorrectAnswerJson": "\"1930\"",
+      "Score": "0.25",
+      "Order": "1"
+    },
+    {
+      "Content": "Quốc gia nào đăng cai World Cup 1930?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Brazil\",\"Argentina\",\"Uruguay\",\"Ý\"]",
+      "CorrectAnswerJson": "\"Uruguay\"",
+      "Score": "0.25",
+      "Order": "2"
+    },
+    {
+      "Content": "Đội tuyển nào vô địch World Cup 1950?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Brazil\",\"Uruguay\",\"Ý\",\"Đức\"]",
+      "CorrectAnswerJson": "\"Uruguay\"",
+      "Score": "0.25",
+      "Order": "3"
+    },
+    {
+      "Content": "Pele vô địch World Cup đầu tiên khi bao nhiêu tuổi?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"17\",\"18\",\"19\",\"20\"]",
+      "CorrectAnswerJson": "\"17\"",
+      "Score": "0.25",
+      "Order": "4"
+    },
+    {
+      "Content": "Đội tuyển nào vô địch World Cup 1966?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Anh\",\"Brazil\",\"Argentina\",\"Đức\"]",
+      "CorrectAnswerJson": "\"Anh\"",
+      "Score": "0.25",
+      "Order": "5"
+    },
+    {
+      "Content": "Brazil đã vô địch World Cup bao nhiêu lần?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"3\",\"4\",\"5\",\"6\"]",
+      "CorrectAnswerJson": "\"5\"",
+      "Score": "0.25",
+      "Order": "6"
+    },
+    {
+      "Content": "Diego Maradona nổi bật nhất ở World Cup nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"1978\",\"1982\",\"1986\",\"1990\"]",
+      "CorrectAnswerJson": "\"1986\"",
+      "Score": "0.25",
+      "Order": "7"
+    },
+    {
+      "Content": "Bàn thắng Bàn tay của Chúa được ghi vào lưới đội nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Đức\",\"Anh\",\"Brazil\",\"Ý\"]",
+      "CorrectAnswerJson": "\"Anh\"",
+      "Score": "0.25",
+      "Order": "8"
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 1994 là đội nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Brazil\",\"Ý\",\"Đức\",\"Argentina\"]",
+      "CorrectAnswerJson": "\"Brazil\"",
+      "Score": "0.25",
+      "Order": "9"
+    },
+    {
+      "Content": "Roberto Baggio đá hỏng luân lưu trong trận chung kết World Cup nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"1986\",\"1990\",\"1994\",\"1998\"]",
+      "CorrectAnswerJson": "\"1994\"",
+      "Score": "0.25",
+      "Order": "10"
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 1998 là đội nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Brazil\",\"Pháp\",\"Ý\",\"Hà Lan\"]",
+      "CorrectAnswerJson": "\"Pháp\"",
+      "Score": "0.25",
+      "Order": "11"
+    },
+    {
+      "Content": "Zidane ghi bao nhiêu bàn trong chung kết World Cup 1998?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"1\",\"2\",\"3\",\"4\"]",
+      "CorrectAnswerJson": "\"2\"",
+      "Score": "0.25",
+      "Order": "12"
+    },
+    {
+      "Content": "World Cup 2002 được tổ chức ở đâu?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Nhật Bản\",\"Hàn Quốc\",\"Nhật Bản và Hàn Quốc\",\"Trung Quốc\"]",
+      "CorrectAnswerJson": "\"Nhật Bản và Hàn Quốc\"",
+      "Score": "0.25",
+      "Order": "13"
+    },
+    {
+      "Content": "Ronaldo ghi bao nhiêu bàn tại World Cup 2002?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"6\",\"7\",\"8\",\"9\"]",
+      "CorrectAnswerJson": "\"8\"",
+      "Score": "0.25",
+      "Order": "14"
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2006 là đội nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Ý\",\"Pháp\",\"Brazil\",\"Đức\"]",
+      "CorrectAnswerJson": "\"Ý\"",
+      "Score": "0.25",
+      "Order": "15"
+    },
+    {
+      "Content": "Zidane bị thẻ đỏ trong trận chung kết World Cup 2006 vì lý do gì?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Phản ứng trọng tài\",\"Đánh nguội\",\"Húc đầu Materazzi\",\"Câu giờ\"]",
+      "CorrectAnswerJson": "\"Húc đầu Materazzi\"",
+      "Score": "0.25",
+      "Order": "16"
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2010 là đội nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Đức\",\"Hà Lan\",\"Tây Ban Nha\",\"Brazil\"]",
+      "CorrectAnswerJson": "\"Tây Ban Nha\"",
+      "Score": "0.25",
+      "Order": "17"
+    },
+    {
+      "Content": "Ai ghi bàn quyết định trong chung kết World Cup 2010?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Villa\",\"Iniesta\",\"Xavi\",\"Torres\"]",
+      "CorrectAnswerJson": "\"Iniesta\"",
+      "Score": "0.25",
+      "Order": "18"
+    },
+    {
+      "Content": "Đội tuyển Đức thắng Brazil bao nhiêu ở bán kết World Cup 2014?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"5-1\",\"6-1\",\"7-1\",\"8-1\"]",
+      "CorrectAnswerJson": "\"7-1\"",
+      "Score": "0.25",
+      "Order": "19"
+    },
+    {
+      "Content": "Ai ghi bàn quyết định trong chung kết World Cup 2014?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Muller\",\"Klose\",\"Gotze\",\"Kroos\"]",
+      "CorrectAnswerJson": "\"Gotze\"",
+      "Score": "0.25",
+      "Order": "20"
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2018 là đội nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Croatia\",\"Pháp\",\"Bỉ\",\"Anh\"]",
+      "CorrectAnswerJson": "\"Pháp\"",
+      "Score": "0.25",
+      "Order": "21"
+    },
+    {
+      "Content": "Luka Modric thuộc đội tuyển quốc gia nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Croatia\",\"Serbia\",\"Ba Lan\",\"Hungary\"]",
+      "CorrectAnswerJson": "\"Croatia\"",
+      "Score": "0.25",
+      "Order": "22"
+    },
+    {
+      "Content": "World Cup 2022 được tổ chức tại quốc gia nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Qatar\",\"UAE\",\"Saudi Arabia\",\"Ai Cập\"]",
+      "CorrectAnswerJson": "\"Qatar\"",
+      "Score": "0.25",
+      "Order": "23"
+    },
+    {
+      "Content": "Argentina đánh bại đội nào trong chung kết World Cup 2022?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Brazil\",\"Đức\",\"Pháp\",\"Croatia\"]",
+      "CorrectAnswerJson": "\"Pháp\"",
+      "Score": "0.25",
+      "Order": "24"
+    },
+    {
+      "Content": "Lionel Messi vô địch World Cup đầu tiên vào năm nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"2010\",\"2014\",\"2018\",\"2022\"]",
+      "CorrectAnswerJson": "\"2022\"",
+      "Score": "0.25",
+      "Order": "25"
+    },
+    {
+      "Content": "Cầu thủ ghi nhiều bàn thắng nhất lịch sử World Cup là ai?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Pele\",\"Messi\",\"Ronaldo\",\"Miroslav Klose\"]",
+      "CorrectAnswerJson": "\"Miroslav Klose\"",
+      "Score": "0.25",
+      "Order": "26"
+    },
+    {
+      "Content": "World Cup nào lần đầu áp dụng công nghệ VAR?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"2010\",\"2014\",\"2018\",\"2022\"]",
+      "CorrectAnswerJson": "\"2018\"",
+      "Score": "0.25",
+      "Order": "27"
+    },
+    {
+      "Content": "Đội tuyển nào vô địch World Cup 1974?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Tây Đức\",\"Brazil\",\"Hà Lan\",\"Argentina\"]",
+      "CorrectAnswerJson": "\"Tây Đức\"",
+      "Score": "0.25",
+      "Order": "28"
+    },
+    {
+      "Content": "Johan Cruyff là huyền thoại của đội tuyển nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Đức\",\"Hà Lan\",\"Bỉ\",\"Pháp\"]",
+      "CorrectAnswerJson": "\"Hà Lan\"",
+      "Score": "0.25",
+      "Order": "29"
+    },
+    {
+      "Content": "Argentina vô địch World Cup lần đầu vào năm nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"1974\",\"1978\",\"1982\",\"1986\"]",
+      "CorrectAnswerJson": "\"1978\"",
+      "Score": "0.25",
+      "Order": "30"
+    },
+    {
+      "Content": "World Cup 1994 được tổ chức tại quốc gia nào?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Mỹ\",\"Canada\",\"Mexico\",\"Brazil\"]",
+      "CorrectAnswerJson": "\"Mỹ\"",
+      "Score": "0.25",
+      "Order": "31"
+    },
+    {
+      "Content": "Đội tuyển nào vô địch World Cup 1970?",
+      "Type": "SingleChoice",
+      "OptionsJson": "[\"Brazil\",\"Ý\",\"Đức\",\"Uruguay\"]",
+      "CorrectAnswerJson": "\"Brazil\"",
+      "Score": "0.25",
+      "Order": "32"
+    },
+    {
+      "Content": "Phân tích vai trò của Pele đối với lịch sử các kỳ World Cup.",
+      "Type": "Essay",
+      "OptionsJson": "[]",
+      "CorrectAnswerJson": "\"Pele là một trong những cầu thủ vĩ đại nhất lịch sử World Cup. Ông giúp Brazil vô địch các năm 1958, 1962 và 1970. Pele nổi bật với kỹ thuật cá nhân, khả năng ghi bàn và tầm ảnh hưởng toàn cầu.\"",
+      "Score": "1",
+      "Order": "33"
+    },
+    {
+      "Content": "So sánh World Cup thời kỳ đầu với World Cup hiện đại về quy mô tổ chức, công nghệ và sức ảnh hưởng.",
+      "Type": "Essay",
+      "OptionsJson": "[]",
+      "CorrectAnswerJson": "\"World Cup thời kỳ đầu có ít đội tham dự và điều kiện tổ chức hạn chế. World Cup hiện đại có quy mô toàn cầu, áp dụng VAR và công nghệ goal-line, ảnh hưởng mạnh đến kinh tế và truyền thông.\"",
+      "Score": "1",
+      "Order": "34"
+    }
+  ]
+}

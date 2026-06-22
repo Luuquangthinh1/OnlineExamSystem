@@ -1,0 +1,256 @@
+{
+  "Title": "Đề thi lịch sử và hiện tại World Cup bóng đá nam",
+  "Duration": 60,
+  "MaxAttempts": 1,
+  "Questions": [
+    {
+      "Content": "World Cup đầu tiên được tổ chức vào năm nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["1920", "1930", "1940", "1950"],
+      "CorrectAnswerJson": ["1930"]
+    },
+    {
+      "Content": "Quốc gia đăng cai World Cup đầu tiên là nước nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Uruguay", "Argentina", "Ý"],
+      "CorrectAnswerJson": ["Uruguay"]
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup đầu tiên là?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Argentina", "Uruguay", "Đức"],
+      "CorrectAnswerJson": ["Uruguay"]
+    },
+    {
+      "Content": "World Cup được tổ chức bao nhiêu năm một lần?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["2 năm", "3 năm", "4 năm", "5 năm"],
+      "CorrectAnswerJson": ["4 năm"]
+    },
+    {
+      "Content": "Đội tuyển nào giành chức vô địch World Cup 2002?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Đức", "Argentina", "Pháp"],
+      "CorrectAnswerJson": ["Brazil"]
+    },
+    {
+      "Content": "Đội tuyển nào vô địch World Cup nhiều nhất?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Đức", "Argentina", "Brazil", "Ý"],
+      "CorrectAnswerJson": ["Brazil"]
+    },
+    {
+      "Content": "Brazil đã vô địch World Cup bao nhiêu lần?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["3", "4", "5", "6"],
+      "CorrectAnswerJson": ["5"]
+    },
+    {
+      "Content": "World Cup 2018 được tổ chức ở quốc gia nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Qatar", "Nga", "Brazil", "Nam Phi"],
+      "CorrectAnswerJson": ["Nga"]
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2018 là?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Croatia", "Brazil", "Pháp", "Đức"],
+      "CorrectAnswerJson": ["Pháp"]
+    },
+    {
+      "Content": "World Cup 2022 được tổ chức ở đâu?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Mỹ", "Nga", "Qatar", "Brazil"],
+      "CorrectAnswerJson": ["Qatar"]
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2022 là?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Pháp", "Argentina", "Brazil", "Anh"],
+      "CorrectAnswerJson": ["Argentina"]
+    },
+    {
+      "Content": "Ai là đội trưởng Argentina tại World Cup 2022?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Messi", "Di Maria", "Martinez", "Alvarez"],
+      "CorrectAnswerJson": ["Messi"]
+    },
+    {
+      "Content": "Đội tuyển nào là á quân World Cup 2022?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Pháp", "Đức", "Anh"],
+      "CorrectAnswerJson": ["Pháp"]
+    },
+    {
+      "Content": "Ai là vua phá lưới World Cup 2022?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Messi", "Mbappe", "Giroud", "Alvarez"],
+      "CorrectAnswerJson": ["Mbappe"]
+    },
+    {
+      "Content": "Cầu thủ ghi nhiều bàn thắng nhất lịch sử World Cup là ai?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Messi", "Pele", "Miroslav Klose", "Ronaldo"],
+      "CorrectAnswerJson": ["Miroslav Klose"]
+    },
+    {
+      "Content": "Pele thuộc quốc gia nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Argentina", "Đức", "Ý"],
+      "CorrectAnswerJson": ["Brazil"]
+    },
+    {
+      "Content": "Maradona thuộc quốc gia nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Argentina", "Pháp", "Ý"],
+      "CorrectAnswerJson": ["Argentina"]
+    },
+    {
+      "Content": "Đức thắng Brazil với tỉ số nào tại World Cup 2014?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["5-1", "6-1", "7-1", "8-1"],
+      "CorrectAnswerJson": ["7-1"]
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2014 là?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Argentina", "Đức", "Hà Lan"],
+      "CorrectAnswerJson": ["Đức"]
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2010 là?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Đức", "Tây Ban Nha", "Brazil", "Ý"],
+      "CorrectAnswerJson": ["Tây Ban Nha"]
+    },
+    {
+      "Content": "World Cup 2010 tổ chức tại quốc gia nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Nam Phi", "Brazil", "Đức", "Nga"],
+      "CorrectAnswerJson": ["Nam Phi"]
+    },
+    {
+      "Content": "Đội tuyển Anh vô địch World Cup năm nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["1966", "1970", "1982", "1990"],
+      "CorrectAnswerJson": ["1966"]
+    },
+    {
+      "Content": "Ý đã vô địch World Cup bao nhiêu lần?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["2", "3", "4", "5"],
+      "CorrectAnswerJson": ["4"]
+    },
+    {
+      "Content": "World Cup 2002 được tổ chức tại Nhật Bản và quốc gia nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Trung Quốc", "Hàn Quốc", "Thái Lan", "Indonesia"],
+      "CorrectAnswerJson": ["Hàn Quốc"]
+    },
+    {
+      "Content": "Ai được xem là cầu thủ xuất sắc nhất World Cup 2022?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Messi", "Mbappe", "Neymar", "Modric"],
+      "CorrectAnswerJson": ["Messi"]
+    },
+    {
+      "Content": "Đội tuyển nào chưa từng vô địch World Cup?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Đức", "Hà Lan", "Argentina"],
+      "CorrectAnswerJson": ["Hà Lan"]
+    },
+    {
+      "Content": "Cristiano Ronaldo thuộc quốc gia nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Anh", "Bồ Đào Nha", "Ý", "Tây Ban Nha"],
+      "CorrectAnswerJson": ["Bồ Đào Nha"]
+    },
+    {
+      "Content": "Lionel Messi thi đấu cho đội tuyển quốc gia nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Argentina", "Pháp", "Tây Ban Nha"],
+      "CorrectAnswerJson": ["Argentina"]
+    },
+    {
+      "Content": "Đội tuyển Pháp vô địch World Cup lần đầu vào năm nào?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["1994", "1998", "2002", "2006"],
+      "CorrectAnswerJson": ["1998"]
+    },
+    {
+      "Content": "Ai nổi tiếng với cụm từ 'Bàn tay của Chúa'?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Messi", "Maradona", "Pele", "Zidane"],
+      "CorrectAnswerJson": ["Maradona"]
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 2006 là?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Ý", "Pháp", "Brazil", "Đức"],
+      "CorrectAnswerJson": ["Ý"]
+    },
+    {
+      "Content": "World Cup 2026 sẽ có bao nhiêu đội tham dự?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["32", "40", "48", "64"],
+      "CorrectAnswerJson": ["48"]
+    },
+    {
+      "Content": "Đội tuyển nào vô địch World Cup 1998?",
+      "Type": "SingleChoice",
+      "Score": 0.25,
+      "OptionsJson": ["Brazil", "Pháp", "Đức", "Ý"],
+      "CorrectAnswerJson": ["Pháp"]
+    },
+    {
+      "Content": "Phân tích vai trò và tầm ảnh hưởng của Lionel Messi trong hành trình vô địch World Cup 2022 của Argentina.",
+      "Type": "Essay",
+      "Score": 1,
+      "OptionsJson": [],
+      "CorrectAnswerJson": [
+        "Lionel Messi là cầu thủ quan trọng nhất của đội tuyển Argentina tại World Cup 2022. Trong suốt giải đấu, anh vừa là đội trưởng vừa là người dẫn dắt lối chơi của toàn đội. Messi ghi nhiều bàn thắng quan trọng, thực hiện các pha kiến tạo quyết định và luôn biết cách tạo ra khác biệt ở những thời điểm khó khăn. Ngoài chuyên môn, anh còn truyền động lực và tinh thần thi đấu cho các đồng đội. Với kinh nghiệm, kỹ thuật và khả năng lãnh đạo của mình, Messi đã giúp Argentina vượt qua nhiều đối thủ mạnh để giành chức vô địch World Cup sau nhiều năm chờ đợi. Danh hiệu này cũng giúp anh hoàn thiện sự nghiệp và được xem là một trong những cầu thủ vĩ đại nhất lịch sử bóng đá thế giới."
+      ]
+    },
+    {
+      "Content": "Trình bày ý nghĩa của World Cup đối với sự phát triển của bóng đá thế giới trong lịch sử và thời điểm hiện tại.",
+      "Type": "Essay",
+      "Score": 1,
+      "OptionsJson": [],
+      "CorrectAnswerJson": [
+        "World Cup là giải đấu bóng đá lớn nhất thế giới và có vai trò rất quan trọng đối với sự phát triển của bóng đá toàn cầu. Trong lịch sử, giải đấu đã giúp các quốc gia có cơ hội giao lưu, học hỏi và nâng cao trình độ bóng đá. World Cup còn tạo nên nhiều khoảnh khắc đáng nhớ và giúp bóng đá trở thành môn thể thao phổ biến nhất hành tinh. Hiện nay, World Cup không chỉ mang ý nghĩa thể thao mà còn có giá trị lớn về kinh tế, văn hóa và truyền thông. Giải đấu thu hút hàng tỷ khán giả theo dõi, giúp quảng bá hình ảnh đất nước đăng cai và tạo động lực cho các cầu thủ trẻ theo đuổi đam mê bóng đá. Đây cũng là nơi quy tụ những cầu thủ và đội tuyển mạnh nhất thế giới để tranh tài."
+      ]
+    }
+  ]
+}

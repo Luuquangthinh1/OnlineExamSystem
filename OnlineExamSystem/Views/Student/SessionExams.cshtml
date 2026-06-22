@@ -1,0 +1,100 @@
+﻿@model ExamSession
+@{
+    ViewData["Title"] = "Danh sách đề thi";
+}
+<style>
+    .exam-card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn-start {
+        background: green;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+    video {
+        width: 250px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+</style>
+<h2>Danh sách đề thi</h2>
+<h4>Bật webcam để giám sát</h4>
+<video id="webcam" autoplay></video>
+<script>
+    navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: false
+    })
+    .then(function(stream){
+        document.getElementById("webcam").srcObject = stream;
+    })
+    .catch(function(err){
+        alert("Vui lòng cho phép truy cập webcam");
+    });
+</script>
+@foreach (var exam in Model.Exams
+    .Where(x =>
+        x.IsPublished
+        && x.Questions != null
+        && x.Questions.Any()))
+{
+    <div class="exam-card">
+
+        <h3>@exam.Title</h3>
+
+        @{
+            var userId =
+                Context.Session
+                .GetInt32("UserId");
+
+            int attemptCount = 0;
+
+            bool locked = false;
+
+            if (userId != null)
+            {
+                attemptCount =
+                    exam.ExamResults?
+                    .Count(x =>
+                        x.StudentId ==
+                        userId)
+                    ?? 0;
+
+                locked =
+                    exam.ExamResults?
+                    .Any(x =>
+                        x.StudentId ==
+                        userId
+                        &&
+                        x.Score == 0)
+                    ?? false;
+            }
+        }
+
+        @if (
+            attemptCount < exam.MaxAttempts
+            &&
+            !locked)
+        {
+            <a asp-action="Start"
+               asp-route-id="@exam.Id"
+               class="btn-start">
+                Nhận bài thi
+            </a>
+        }
+        else
+        {
+            <button class="btn btn-danger"
+                    disabled>
+                Không thể thi
+            </button>
+        }
+
+    </div>
+}

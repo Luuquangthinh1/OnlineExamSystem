@@ -1,0 +1,691 @@
+﻿@model OnlineExamSystem.Models.Exam
+@using OnlineExamSystem.Models.Enums
+@using System.Text.Json
+@{
+    ViewData["Title"] = "Chỉnh sửa đề thi";
+}
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Chỉnh sửa đề thi
+    </h2>
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+    <form asp-action="EditExam"
+          method="post">
+        <input asp-for="Id"
+               type="hidden" />
+        <input asp-for="ExamSessionId"
+               type="hidden" />
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    Thông tin đề thi
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">
+                        Tiêu đề
+                    </label>
+                    <input asp-for="Title"
+                           class="form-control" />
+                </div>
+                <div class="row">
+
+                    <div class="col-md-3">
+
+                        <label class="form-label">
+
+                            Thời gian (phút)
+
+                        </label>
+
+                        <input type="number"
+                               asp-for="Duration"
+                               value="@Model.Duration"
+                               class="form-control" />
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <label class="form-label">
+
+                            Tổng điểm
+
+                        </label>
+
+                        <input asp-for="TotalScore"
+                               type="number"
+                               step="0.05"
+                               class="form-control" />
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <label class="form-label">
+
+                            Số lần làm
+
+                        </label>
+
+                        <input asp-for="MaxAttempts"
+                               class="form-control"
+                               type="number"
+                               min="1" />
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <label class="form-label">
+
+                            Số cảnh báo
+
+                        </label>
+
+                        <input asp-for="MaxWarnings"
+                               class="form-control"
+                               type="number"
+                               min="1" />
+
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+
+                            Thời gian bắt đầu
+
+                        </label>
+
+                        <input asp-for="StartTime"
+                               type="datetime-local"
+                               class="form-control" />
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+
+                            Thời gian kết thúc
+
+                        </label>
+
+                        <input asp-for="EndTime"
+                               type="datetime-local"
+                               class="form-control" />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    Cài đặt giám sát
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-check mb-2">
+                            <input asp-for="EnableFullscreen"
+                                   class="form-check-input" />
+                            <label class="form-check-label">
+                                Fullscreen
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input asp-for="DetectTabSwitch"
+                                   class="form-check-input" />
+
+                            <label class="form-check-label">
+                                Chuyển tab
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input asp-for="DetectCopyPaste"
+                                   class="form-check-input" />
+
+                            <label class="form-check-label">
+                                Copy/Paste
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input asp-for="DetectRightClick"
+                                   class="form-check-input" />
+
+                            <label class="form-check-label">
+                                Chuột phải
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check mb-2">
+                            <input asp-for="DetectDevTools"
+                                   class="form-check-input" />
+
+                            <label class="form-check-label">
+                                DevTools
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input asp-for="EnableWebcamMonitoring"
+                                   class="form-check-input" />
+                            <label class="form-check-label">
+                                Webcam
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input asp-for="EnableBehaviorAnalytics"
+                                   class="form-check-input" />
+
+                            <label class="form-check-label">
+                                AI hành vi
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input asp-for="AutoSubmitWhenCheating"
+                                   class="form-check-input" />
+                            <label class="form-check-label">
+                                Auto submit
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <button type="submit"
+                    class="btn btn-primary">
+                Lưu thay đổi
+            </button>
+            <a asp-action="AssignExam"
+               asp-route-examId="@Model.Id"
+               class="btn btn-warning text-dark">
+                Phân bổ kỳ thi
+            </a>
+            <a asp-action="EssayGrading"
+               asp-route-examId="@Model.Id"
+               class="btn btn-dark">
+                Chấm tự luận
+            </a>
+        </div>
+    </form>
+    @{
+        var mcQuestions = Model.Questions?
+        .Where(x =>
+            x.Type ==
+            QuestionType.SingleChoice
+            ||
+            x.Type ==
+            QuestionType.MultipleChoice
+            ||
+            x.Type ==
+            QuestionType.TrueFalse
+            ||
+            x.Type ==
+            QuestionType.Matching)
+        .ToList();
+        var essayQuestions =
+            Model.Questions?
+                .Where(x =>
+                    x.Type ==
+                    QuestionType.Essay
+                    ||
+                    x.Type ==
+                    QuestionType.FillBlank)
+                .ToList();
+
+        decimal mcTotal =
+    mcQuestions?.Sum(x => (decimal)x.Score)
+    ?? 0m;
+
+        decimal essayTotal =
+            essayQuestions?.Sum(x => (decimal)x.Score)
+            ?? 0m;
+    }
+    @{
+        decimal totalScore = mcTotal + essayTotal;
+
+        bool isInvalid =
+            Math.Abs(totalScore - 10m) > 0.01m;
+    }
+    <div class="alert @(isInvalid ? "alert-danger" : "alert-success") mb-4">
+        <h5>
+            Tổng điểm: @totalScore/10
+        </h5>
+        <ul class="mb-0">
+            <li>
+                Trắc nghiệm:
+                @(mcQuestions?.Count ?? 0) câu /
+                @mcTotal điểm
+            </li>
+            <li>
+                Tự luận:
+                @(essayQuestions?.Count ?? 0) câu /
+                @essayTotal điểm
+            </li>
+        </ul>
+        @if (isInvalid)
+        {
+            <div class="mt-2 text-danger fw-bold">
+                Tổng điểm của đề phải bằng đúng 10 điểm!
+            </div>
+        }
+        else
+        {
+            <div class="mt-2 text-success fw-bold">
+                Đề thi hợp lệ.
+            </div>
+        }
+    </div>
+    <h3 class="mb-3">
+    Danh sách câu hỏi
+    </h3>
+    @if (Model.Questions != null &&
+     Model.Questions.Any())
+    {
+    int index = 1;
+    foreach (var q in Model.Questions)
+    {
+            var options =
+       string.IsNullOrWhiteSpace(q.OptionsJson)
+       ? new List<string>()
+       : JsonSerializer.Deserialize<List<string>>(
+           q.OptionsJson
+       ) ?? new List<string>();
+            var correctAnswer =
+     string.IsNullOrWhiteSpace(q.CorrectAnswerJson)
+         ? ""
+         : (JsonSerializer.Deserialize<List<string>>(
+               q.CorrectAnswerJson
+           )?.FirstOrDefault() ?? "");
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form asp-action="EditQuestion"
+                      method="post">
+                    <input type="hidden"
+                           name="Id"
+                           value="@q.Id" />
+                    <h5 class="mb-3">
+                        Câu @index
+                    </h5>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Nội dung câu hỏi
+                        </label>
+                        <textarea name="Content"
+                                  class="form-control"
+                                  rows="4">@q.Content</textarea>
+                    </div>
+                        <div class="mb-3 mt-2">
+                            <label class="form-label">
+                                Điểm câu hỏi
+                            </label>
+                            <input type="number"
+                                   step="0.25"
+                                   min="0"
+                                   value="@q.Score"
+                                   class="form-control question-score" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Loại câu hỏi</label>
+                            <select name="Type" class="form-select">
+                                <option value="SingleChoice"
+                                        selected="@(q.Type.ToString() == "SingleChoice")">
+                                    SingleChoice
+                                </option>
+                                <option value="MultipleChoice"
+                                        selected="@(q.Type.ToString() == "MultipleChoice")">
+                                    MultipleChoice
+                                </option>
+                                <option value="FillBlank"
+                                        selected="@(q.Type.ToString() == "FillBlank")">
+                                    FillBlank
+                                </option>
+                                <option value="Essay"
+                                        selected="@(q.Type.ToString() == "Essay")">
+                                    Essay
+                                </option>
+                                <option value="Matching"
+                                        selected="@(q.Type.ToString() == "Matching")">
+                                    Matching
+                                </option>
+                                <option value="TrueFalse"
+                                        selected="@(q.Type.ToString() == "TrueFalse")">
+                                    TrueFalse
+                                </option>
+                            </select>
+                        </div>
+                        @if (
+        q.Type ==
+        QuestionType.SingleChoice
+
+        ||
+
+        q.Type ==
+        QuestionType.TrueFalse
+
+        ||
+
+        q.Type ==
+        QuestionType.MultipleChoice
+    )
+                        {
+                            if (options != null)
+                            {
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+
+                                        Các lựa chọn
+
+                                    </label>
+
+                                    @{
+                                        var letters =
+                                            new[] { "A", "B", "C", "D" };
+                                    }
+
+                                    @if (
+                                        q.Type ==
+                                        QuestionType.SingleChoice
+                                    )
+                                    {
+                                        @for (
+                                            int i = 0;
+                                            i < options.Count;
+                                            i++
+                                        )
+                                        {
+                                            <div class="form-check mb-2">
+
+                                                <input class="form-check-input"
+                                                       type="radio"
+                                                       name="single_@q.Id"
+                                                       value="@options[i]"
+                                                @(correctAnswer != null
+                                                                                          &&
+                                                                                          correctAnswer == options[i]   
+                                                                                          ? "checked"
+                                                                                          : "") />
+
+                                                <label class="form-check-label me-2">
+
+                                                    @(letters[i]).
+
+                                                </label>
+
+                                                <input type="text"
+                                                       name="Options[@i]"
+                                                       value="@options[i]"
+                                                       class="form-control d-inline-block w-75" />
+
+                                            </div>
+                                        }
+                                    }
+
+                                    else if (
+                                        q.Type ==
+                                        QuestionType.MultipleChoice
+                                    )
+                                    {
+                                        @for (
+                                            int i = 0;
+                                            i < options.Count;
+                                            i++
+                                        )
+                                        {
+                                            <div class="form-check mb-2">
+
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       name="multi_@q.Id"
+                                                       value="@options[i]"
+                                                @(correctAnswer != null
+                                                                                          &&
+                                                                                          correctAnswer == options[i]   
+                                                                                          ? "checked"
+                                                                                          : "") />
+
+                                                <label class="form-check-label me-2">
+
+                                                    @(letters[i]).
+
+                                                </label>
+
+                                                <input type="text"
+                                                       name="Options[@i]"
+                                                       value="@options[i]"
+                                                       class="form-control d-inline-block w-75" />
+
+                                            </div>
+                                        }
+                                    }
+
+                                    else if (
+                                        q.Type ==
+                                        QuestionType.TrueFalse
+                                    )
+                                    {
+                                        <div class="form-check mb-2">
+
+                                            <input class="form-check-input"
+                                                   type="radio"
+                                                   name="tf_@q.Id"
+                                                   value="Đúng"
+                                            @(correctAnswer != null
+                                                                                  &&
+                                                                                  correctAnswer == "Đúng"
+                                                                                  ? "checked"
+                                                                                  : "") />
+
+                                            <label class="form-check-label">
+
+                                                Đúng
+
+                                            </label>
+
+                                        </div>
+
+                                        <div class="form-check mb-2">
+
+                                            <input class="form-check-input"
+                                                   type="radio"
+                                                   name="tf_@q.Id"
+                                                   value="Sai"
+                                            @(correctAnswer != null
+                                                                                  &&
+                                                                                  correctAnswer == "Sai"
+                                                                                  ? "checked"
+                                                                                  : "") />
+
+                                            <label class="form-check-label">
+
+                                                Sai
+
+                                            </label>
+
+                                        </div>
+                                    }
+
+                                </div>
+                            }
+                        }
+                        else if (
+                        q.Type ==
+                        QuestionType.FillBlank)
+                        {
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Đáp án tham khảo
+                            </label>
+
+                                <textarea name="CorrectAnswerJson"
+                                          class="form-control"
+                                          rows="6">@(correctAnswer ?? "")</textarea>
+
+                        </div>
+                        }
+                        else if (
+                        q.Type ==
+                        QuestionType.Essay)
+                        {
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Đáp án tham khảo
+                            </label>
+
+                                <textarea name="CorrectAnswerJson"
+                                          class="form-control"
+                                          rows="6">@(correctAnswer ?? "")</textarea>
+
+                        </div>
+                        }
+                        else if (
+                        q.Type ==
+                        QuestionType.Matching)
+                        {
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Danh sách nối
+                            </label>
+
+                            @if (options != null)
+                            {
+                                @for (int i = 0;
+                                      i < options.Count;
+                                      i++)
+                                {
+                                    <input type="text"
+                                           name="Options[@i]"
+                                           value="@options[i]"
+                                           class="form-control mb-2" />
+                                }
+                            }
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Kết quả ghép nối
+                            </label>
+
+                                <textarea name="CorrectAnswerJson"
+                                          class="form-control"
+                                          rows="6">@(correctAnswer ?? "")</textarea>
+
+                        </div>
+                        }
+                        else
+                        {
+                        @for (
+                            int i = 0;
+                            i < options.Count;
+                            i++)
+                        {
+                            <div class="mb-2">
+
+                                <input type="text"
+                                       name="Options[@i]"
+                                       value="@options[i]"
+                                       class="form-control" />
+
+                            </div>
+                        }
+                        }
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Điểm
+                        </label>
+                        <input type="number"
+                               name="Score"
+                               value="@q.Score"
+                               class="form-control" />
+                    </div>
+                    <button type="submit"
+                            class="btn btn-success">
+                        Lưu câu hỏi
+                    </button>
+                </form>
+                <form asp-action="DeleteQuestion"
+                      method="post"
+                      class="mt-2"
+                      onsubmit="return confirm('Xóa câu hỏi này?');">
+                    <input type="hidden"
+                           name="id"
+                           value="@q.Id" />
+                    <button type="submit"
+                            class="btn btn-danger">
+                        Xóa câu hỏi
+                    </button>
+                </form>
+            </div>
+        </div>
+        index++;
+    }
+    index++;
+    }
+    else if (TempData["EmptyQuestions"] != null)
+    {
+        <div class="alert alert-warning">
+            @TempData["EmptyQuestions"]
+        </div>
+    }
+</div>
+<script>
+    function updateTotalScore()
+    {
+        let total = 0;
+        document
+            .querySelectorAll(
+                ".question-score")
+            .forEach(x =>
+            {
+                total +=
+                    parseFloat(
+                        x.value || 0);
+            });
+        document
+            .getElementById(
+                "totalScore")
+            .innerText =
+                total.toFixed(2);
+    }
+    document
+        .querySelectorAll(
+            ".question-score")
+        .forEach(x =>
+        {
+            x.addEventListener(
+                "input",
+                updateTotalScore);
+        });
+    updateTotalScore();
+</script>

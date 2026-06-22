@@ -1,0 +1,411 @@
+﻿@model OnlineExamSystem.Models.Exam
+@{
+    ViewData["Title"] = "Tạo đề thi";
+}
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Tạo đề thi
+    </h2>
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+    <form asp-action="CreateExam"
+          method="post"
+          enctype="multipart/form-data">
+        <input asp-for="ExamSessionId"
+               type="hidden" />
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    Thông tin đề thi
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">
+                        Tên đề thi
+                    </label>
+                    <input asp-for="Title"
+                           class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">
+                        Thời gian làm bài (phút)
+                    </label>
+                    <input asp-for="Duration"
+                           type="number"
+                           class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">
+                        Tổng điểm đề thi
+                    </label>
+                    <input asp-for="TotalScore"
+                           type="number"
+                           min="1"
+                           step="0.05"
+                           class="form-control" />
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Thời gian bắt đầu thi
+
+                            </label>
+
+                            <input asp-for="StartTime"
+                                   type="datetime-local"
+                                   class="form-control" />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Thời gian kết thúc thi
+
+                            </label>
+
+                            <input asp-for="EndTime"
+                                   type="datetime-local"
+                                   class="form-control" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">
+                        Số lần được phép làm bài
+                    </label>
+                    <input asp-for="MaxAttempts"
+                           type="number"
+                           min="1"
+                           class="form-control" />
+                    <span asp-validation-for="MaxAttempts"
+                          class="text-danger">
+                    </span>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">
+                        Số cảnh báo tối đa
+                    </label>
+                    <input asp-for="MaxWarnings"
+                           class="form-control"
+                           type="number"
+                           min="1"
+                           value="@(Model.MaxWarnings <= 0 ? 3 : Model.MaxWarnings)" />
+                    <div class="card shadow-sm mt-4">
+
+                        <div class="card-header">
+
+                            <h5 class="mb-0">
+
+                                Cấu hình trừ điểm vi phạm
+
+                            </h5>
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-check mb-3">
+
+                                <input asp-for="EnableViolationPenalty"
+                                       class="form-check-input" />
+
+                                <label asp-for="EnableViolationPenalty"
+                                       class="form-check-label">
+
+                                    Bật trừ điểm vi phạm
+
+                                </label>
+
+                            </div>
+                            <div class="mb-3">
+
+                                <label asp-for="WarningPenaltyStart"
+                                       class="form-label">
+
+                                    Bắt đầu trừ từ lần vi phạm thứ
+
+                                </label>
+
+                                <input asp-for="WarningPenaltyStart"
+                                       type="number"
+                                       min="1"
+                                       class="form-control"
+                                       value="@(Model.WarningPenaltyStart <= 0 ? 2 : Model.WarningPenaltyStart)" />
+
+                            </div>
+                            <div class="mb-3">
+
+                                <label asp-for="PenaltyPerViolation"
+                                       class="form-label">
+
+                                    Số điểm trừ mỗi lần vi phạm
+
+                                </label>
+
+                                <input asp-for="PenaltyPerViolation"
+                                       type="number"
+                                       min="0"
+                                       step="0.05"
+                                       class="form-control"
+                                       value="@(Model.PenaltyPerViolation <= 0 ? 0.5 : Model.PenaltyPerViolation)" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">
+                        Upload đề thi
+                    </label>
+                    <input type="file"
+                           name="file"
+                           class="form-control"
+                           accept=".doc,.docx,.pdf, .json" />
+                </div>
+            </div>
+        </div>
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    Cài đặt giám sát
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="warningError"
+                     class="alert alert-danger d-none">
+                    Bạn phải chọn ít nhất 1 chế độ giám sát hoặc chống gian lận trước khi tạo đề thi!
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="EnableFullscreen"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        Fullscreen
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="DetectTabSwitch"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        Phát hiện chuyển tab
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="DetectCopyPaste"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        Chặn copy paste
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="DetectRightClick"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        Chặn chuột phải
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="DetectDevTools"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        Phát hiện DevTools
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="EnableWebcamMonitoring"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        Giám sát webcam
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="EnableBehaviorAnalytics"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        AI hành vi
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input asp-for="AutoSubmitWhenCheating"
+                           class="form-check-input" />
+
+                    <label class="form-check-label">
+                        Tự nộp bài khi gian lận
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header">
+
+                <h5 class="mb-0">
+                    Ngân hàng câu hỏi
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                @{
+                    var questionBanks =
+                        ViewBag.QuestionBanks
+                        as List<QuestionBank>;
+                }
+
+                @if (questionBanks != null &&
+                     questionBanks.Any())
+                {
+                    <table class="table table-bordered">
+
+                        <thead class="table-dark">
+
+                            <tr>
+                                <th></th>
+                                <th>Nội dung</th>
+                                <th>Loại</th>
+                                <th>Môn học</th>
+                                <th>Độ khó</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var q in questionBanks)
+                            {
+                                <tr>
+
+                                    <td width="60">
+
+                                        <input type="checkbox"
+                                               name="selectedQuestions"
+                                               value="@q.Id"
+                                               class="form-check-input" />
+
+                                    </td>
+
+                                    <td>@q.Content</td>
+
+                                    <td>@q.Type</td>
+
+                                    <td>@q.Subject</td>
+
+                                    <td>@q.Difficulty</td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        Chưa có câu hỏi trong ngân hàng.
+                    </div>
+                }
+
+            </div>
+
+        </div>
+        <button type="submit"
+                class="btn btn-primary">
+            Tạo đề thi
+        </button>
+        <a asp-action="Index"
+               class="btn btn-secondary">
+            Quay lại
+        </a>
+        <script>
+                    document.querySelector("form")
+                        .addEventListener("submit", function (e)
+                        {
+                            const warningCheckboxes =
+                            [
+                                "EnableFullscreen",
+                                "DetectTabSwitch",
+                                "DetectCopyPaste",
+                                "DetectRightClick",
+                                "DetectDevTools",
+                                "EnableWebcamMonitoring",
+                                "EnableBehaviorAnalytics",
+                                "AutoSubmitWhenCheating"
+                            ];
+
+                            let hasChecked = false;
+
+                            warningCheckboxes.forEach(function (id)
+                            {
+                                const checkbox =
+                                    document.getElementById(id);
+
+                                if (checkbox && checkbox.checked)
+                                {
+                                    hasChecked = true;
+                                }
+                            });
+
+                            const errorBox =
+                                document.getElementById(
+                                    "warningError");
+
+                            if (!hasChecked)
+                            {
+                                e.preventDefault();
+
+                                errorBox.classList.remove(
+                                    "d-none");
+
+                                window.scrollTo(
+                                {
+                                    top: errorBox.offsetTop - 100,
+                                    behavior: "smooth"
+                                });
+
+                                return false;
+                            }
+                            else
+                            {
+                                errorBox.classList.add(
+                                    "d-none");
+                            }
+                        });
+        </script>
+    </form>
+</div>

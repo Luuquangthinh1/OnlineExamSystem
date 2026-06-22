@@ -1,0 +1,216 @@
+﻿@model List<OnlineExamSystem.Models.ExamResult>
+
+@using OnlineExamSystem.Models.Enums
+@using System.Text.Json
+
+@{
+    ViewData["Title"] = "Chấm tự luận";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="fw-bold text-primary">
+            Chấm điểm tự luận
+        </h2>
+
+        <a asp-controller="Teacher"
+           asp-action="Index"
+           class="btn btn-secondary">
+
+            Quay lại
+
+        </a>
+
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning">
+            Chưa có bài tự luận cần chấm.
+        </div>
+    }
+    else
+    {
+        @foreach (var result in Model)
+        {
+            <div class="card shadow-sm mb-5">
+
+                <div class="card-header bg-dark text-white">
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            <strong>Sinh viên:</strong>
+
+                            @result.Student?.Username
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <strong>Điểm hiện tại:</strong>
+
+                            @result.EssayScore
+
+                        </div>
+
+                        <div class="col-md-4 text-end">
+
+                            <strong>Nộp lúc:</strong>
+
+                            @result.SubmittedAt.ToString("dd/MM/yyyy HH:mm")
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card-body">
+
+                    @foreach (var q in result.Exam?.Questions?
+                        .Where(x => x.Type == QuestionType.Essay)
+                        ?? new List<Question>())
+                    {
+                        var answers =
+                            JsonSerializer.Deserialize<List<string>>
+                            (
+                                q.CorrectAnswerJson ?? "[]"
+                            ) ?? new List<string>();
+
+                        var studentAnswer =
+                            result.StudentAnswers?
+                            .FirstOrDefault(x =>
+                                x.QuestionId == q.Id)
+                            ?.AnswerText
+                            ?? "Không có bài làm";
+
+                        <div class="border rounded p-4 mb-4">
+
+                            <h5 class="text-primary">
+                                Câu hỏi
+                            </h5>
+
+                            <div class="mb-3">
+                                @q.Content
+                            </div>
+
+                            <hr />
+
+                            <h5 class="text-success">
+                                Đáp án chuẩn
+                            </h5>
+
+                            <div class="mb-3">
+
+                                <pre style="
+                                white-space:pre-wrap;
+                                font-family:inherit;
+                                margin:0;">
+                                @string.Join("\n", answers)
+                            </pre>
+
+                        </div>
+
+                        <hr />
+
+                        <h5 class="text-danger">
+                            Bài làm sinh viên
+                        </h5>
+
+                        <div class="mb-3">
+
+                            <pre style="
+                            white-space:pre-wrap;
+                            font-family:inherit;
+                            margin:0;">
+                            @studentAnswer
+                        </pre>
+
+                    </div>
+
+                    <hr />
+
+                    <form asp-action="UpdateEssayScore"
+                          method="post">
+
+                        <input type="hidden"
+                               name="id"
+                               value="@result.Id" />
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+
+                                <label class="form-label fw-bold">
+
+                                    Điểm tự luận
+
+                                </label>
+
+                                <input type="number"
+                                       name="score"
+                                       class="form-control"
+                                       min="0"
+                                       max="@q.Score"
+                                       step="0.25"
+                                       value="@result.EssayScore" />
+
+                                <small class="text-muted">
+
+                                    Điểm tối đa:
+                                    @q.Score
+
+                                </small>
+
+                            </div>
+
+                            <div class="col-md-8">
+
+                                <label class="form-label fw-bold">
+
+                                    Nhận xét giáo viên
+
+                                </label>
+
+                                <textarea name="teacherComment"
+                                          rows="4"
+                                          class="form-control">@result.TeacherComment</textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+
+                            <button type="submit"
+                                    class="btn btn-success">
+
+                                Lưu điểm
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+}
+    }
+
+</div>

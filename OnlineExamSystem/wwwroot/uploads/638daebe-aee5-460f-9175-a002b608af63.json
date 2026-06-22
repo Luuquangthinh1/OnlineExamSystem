@@ -1,0 +1,26 @@
+[
+  {
+    "Content": "World Cup đầu tiên được tổ chức vào năm nào?",
+    "Type": "SingleChoice",
+    "OptionsJson": "[\"1926\",\"1930\",\"1934\",\"1938\"]",
+    "CorrectAnswerJson": "[\"1930\"]",
+    "Subject": "World Cup",
+    "Difficulty": "Easy"
+  },
+  {
+    "Content": "Đội vô địch World Cup 2022 là?",
+    "Type": "SingleChoice",
+    "OptionsJson": "[\"Argentina\",\"Pháp\",\"Croatia\",\"Brazil\"]",
+    "CorrectAnswerJson": "[\"Argentina\"]",
+    "Subject": "World Cup",
+    "Difficulty": "Easy"
+  },
+  {
+    "Content": "Phân tích sự phát triển của World Cup từ năm 1930 đến nay.",
+    "Type": "Essay",
+    "OptionsJson": "[]",
+    "CorrectAnswerJson": "[\"Trình bày quá trình phát triển của World Cup qua các thời kỳ.\"]",
+    "Subject": "World Cup",
+    "Difficulty": "Hard"
+  }
+]

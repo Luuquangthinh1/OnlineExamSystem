@@ -1,0 +1,11 @@
+﻿@model OnlineExamSystem.Models.ExamSession
+<h2>Tạo kỳ thi</h2>
+<form asp-action="CreateSession" method="post" class="card p-3">
+    <label>Tên kỳ thi</label>
+    <input asp-for="Name" class="form-control mb-2" required />
+    <label>Bắt đầu</label>
+    <input asp-for="StartTime" type="datetime-local" class="form-control mb-2" required />
+    <label>Kết thúc</label>
+    <input asp-for="EndTime" type="datetime-local" class="form-control mb-2" required />
+    <button class="btn btn-success">Tạo</button>
+</form>

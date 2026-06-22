@@ -1,0 +1,132 @@
+﻿@model List<User>
+
+<h2 class="mb-4">
+    Quản lý người dùng
+</h2>
+
+<div class="mb-4">
+
+    <a class="btn btn-dark"
+       href="/Admin/Dashboard">
+
+        Thống kê truy cập
+
+    </a>
+
+</div>
+
+<table class="table table-bordered
+    table-striped">
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Họ tên</th>
+
+            <th>Tài khoản</th>
+
+            <th>Email</th>
+
+            <th>SĐT</th>
+
+            <th>Chức vụ</th>
+
+            <th>Lượt đăng nhập</th>
+
+            <th>Đăng nhập cuối</th>
+
+            <th width="220">
+                Hành động
+            </th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var u in Model)
+        {
+            <tr>
+
+                <td>
+                    @u.FullName
+                </td>
+
+                <td>
+                    @u.Username
+                </td>
+
+                <td>
+                    @u.Email
+                </td>
+
+                <td>
+                    @u.PhoneNumber
+                </td>
+
+                <td>
+
+                    <span class="badge bg-info">
+                        @u.Role
+                    </span>
+
+                </td>
+
+                <td>
+                    @u.LoginCount
+                </td>
+
+                <td>
+
+                    @(u.LastLoginAt
+                        ?.ToString(
+                            "dd/MM/yyyy HH:mm")
+                        ?? "Chưa đăng nhập")
+
+                </td>
+
+                <td>
+
+                    <a class="btn btn-primary btn-sm"
+                       href="/Admin/UserDetails/@u.Id">
+
+                        Chi tiết
+
+                    </a>
+
+                    <a class="btn btn-warning btn-sm"
+                       href="/Admin/EditUser/@u.Id">
+
+                        Sửa
+
+                    </a>
+
+                    <form asp-action="DeleteUser"
+                          method="post"
+                          style="display:inline;">
+
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden"
+                               name="id"
+                               value="@u.Id" />
+
+                        <button class="btn btn-danger btn-sm"
+                                onclick="return confirm('Xóa user này?')">
+
+                            Xóa
+
+                        </button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

@@ -1,0 +1,193 @@
+﻿@model OnlineExamSystem.Models.ExamSession
+@{
+    ViewData["Title"] = "Chi tiết kỳ thi";
+}
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Chi tiết kỳ thi</h2>
+
+        <a asp-action="Index"
+               class="btn btn-secondary">
+            Quay lại
+        </a>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">
+                    Tên kỳ thi:
+                </div>
+                <div class="col-md-9">
+                    @Model.Content
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">
+                    Mô tả:
+                </div>
+
+                <div class="col-md-9">
+                    @Model.Content
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">
+                    Thời gian bắt đầu:
+                </div>
+                <div class="col-md-9">
+                    @Model.StartTime.ToString("dd/MM/yyyy HH:mm")
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">
+                    Thời gian kết thúc:
+                </div>
+
+                <div class="col-md-9">
+                    @Model.EndTime.ToString("dd/MM/yyyy HH:mm")
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 fw-bold">
+                    Trạng thái:
+                </div>
+                <div class="col-md-9">
+                    @if (Model.EndTime < DateTime.Now)
+                    {
+                        <span class="badge bg-danger">
+                            Đã hết hạn
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">
+                            Đang hoạt động
+                        </span>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h4>Danh sách đề thi</h4>
+        </div>
+        <div class="card-body">
+
+            @if (Model.Exams != null && Model.Exams.Any())
+            {
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Tên đề thi</th>
+                            <th>Thời lượng</th>
+                            <th>Trạng thái</th>
+                            <th width="200">Thao tác</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var exam in Model.Exams)
+                        {
+                            <tr>
+                                <td>@exam.Title</td>
+
+                                <td>
+                                    @exam.Duration phút
+                                </td>
+
+                                <td>
+                                    @if (exam.IsPublished)
+                                    {
+                                        <span class="badge bg-success">
+                                            Thành công
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">
+                                            Nháp
+                                        </span>
+                                    }
+                                </td>
+
+                                <td>
+                                    <a asp-action="EditExam"
+                                           asp-route-id="@exam.Id"
+                                           class="btn btn-warning btn-sm">
+                                        Chỉnh sửa
+                                    </a>
+                                    <form asp-action="DeleteExam"
+                                          asp-controller="Teacher"
+                                          method="post"
+                                          style="display:inline;"
+                                          onsubmit="return confirm('Bạn có chắc muốn xóa đề thi này?');">
+                                        <input type="hidden"
+                                               name="id"
+                                               value="@exam.Id" />
+                                        <button type="submit"
+                                                class="btn btn-danger btn-sm">
+                                            Xóa đề
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-info">
+                    Chưa có đề thi nào.
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="mt-4">
+        @if (Model.EndTime < DateTime.Now)
+        {
+            <div class="alert alert-danger">
+                Kỳ thi đã hết hạn, không thể tạo đề thi!
+            </div>
+
+            <button class="btn btn-secondary"
+                    disabled>
+                Tạo đề thi
+            </button>
+        }
+        else
+        {
+            <a asp-action="CreateExam"
+                   asp-route-examSessionId="@Model.Id"
+                   class="btn btn-primary">
+                Tạo đề thi
+            </a>
+        }
+        <a asp-controller="TeacherReports"
+           asp-action="ExamSessionReport"
+           asp-route-examSessionId="@Model.Id"
+           class="btn btn-outline-primary">
+            Xem báo cáo & kết quả thi
+        </a>
+    </div>
+</div>

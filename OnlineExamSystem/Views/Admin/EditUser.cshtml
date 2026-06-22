@@ -1,0 +1,172 @@
+﻿@model User
+
+<h2 class="mb-4">
+    Sửa người dùng
+</h2>
+
+<form method="post">
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden"
+           asp-for="Id" />
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Họ và tên
+        </label>
+
+        <input asp-for="FullName"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Tên tài khoản
+        </label>
+
+        <input asp-for="Username"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Email
+        </label>
+
+        <input asp-for="Email"
+               type="email"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Số điện thoại
+        </label>
+
+        <input asp-for="PhoneNumber"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Chức vụ
+        </label>
+
+        <select name="role"
+                class="form-select">
+
+            <option value="Student"
+                    selected="@(Model.Role.ToString() == "Student")">
+
+                Student
+
+            </option>
+
+            <option value="Teacher"
+                    selected="@(Model.Role.ToString() == "Teacher")">
+
+                Teacher
+
+            </option>
+
+            <option value="Admin"
+                    selected="@(Model.Role.ToString() == "Admin")">
+
+                Admin
+
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="card mt-4 mb-4">
+
+        <div class="card-header
+            bg-dark text-white">
+
+            Thông tin hệ thống
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row mb-2">
+
+                <div class="col-md-4 fw-bold">
+                    Ngày tạo:
+                </div>
+
+                <div class="col-md-8">
+
+                    @Model.CreatedAt
+
+                </div>
+
+            </div>
+
+            <div class="row mb-2">
+
+                <div class="col-md-4 fw-bold">
+                    Đăng nhập cuối:
+                </div>
+
+                <div class="col-md-8">
+
+                    @(Model.LastLoginAt
+                        ?.ToString(
+                            "dd/MM/yyyy HH:mm")
+                        ?? "Chưa đăng nhập")
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 fw-bold">
+                    Tổng lượt đăng nhập:
+                </div>
+
+                <div class="col-md-8">
+
+                    @Model.LoginCount
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="btn btn-warning">
+
+        Cập nhật
+
+    </button>
+
+    <a href="/Admin/Users"
+       class="btn btn-secondary">
+
+        Quay lại
+
+    </a>
+
+</form>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

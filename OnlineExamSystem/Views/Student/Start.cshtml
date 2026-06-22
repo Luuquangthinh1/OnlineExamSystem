@@ -1,0 +1,667 @@
+﻿@model OnlineExamSystem.Models.Exam
+
+@using OnlineExamSystem.Models.Enums
+@using System.Text.Json
+
+@{
+    ViewData["Title"] = "Làm bài thi";
+}
+
+<style>
+    .timer-box {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+        background: #dc3545;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .webcam-box {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 220px;
+        background: white;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        z-index: 9999;
+        display: none;
+    }
+
+        .webcam-box video {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #dc3545;
+        }
+</style>
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        @Model.Title
+    </h2>
+
+    <button type="button"
+            id="startExamBtn"
+            class="btn btn-primary mb-4">
+        Bắt đầu bài
+    </button>
+
+    <div id="timerBox"
+         class="timer-box"
+         style="display:none;">
+
+        ⏰ Thời gian còn lại:
+        <span id="countdownTimer"></span>
+    </div>
+
+    <div id="webcamBox"
+         class="webcam-box">
+
+        <h6 class="text-danger">
+            Webcam giám sát
+        </h6>
+
+        <video id="webcam"
+               autoplay
+               muted
+               playsinline>
+        </video>
+    </div>
+
+    <form asp-action="SubmitExam"
+          method="post"
+          id="examForm"
+          style="display:none;">
+
+        <input type="hidden"
+               name="examId"
+               value="@Model.Id" />
+        <input type="hidden"
+               name="phoneDetected"
+               id="phoneDetected"
+               value="false" />
+
+        <input type="hidden"
+               name="bookDetected"
+               id="bookDetected"
+               value="false" />
+
+        <input type="hidden"
+               name="otherPersonDetected"
+               id="otherPersonDetected"
+               value="false" />
+
+        @foreach (var item in Model.Questions.Select((q, index) => new { q, index }))
+        {
+            var q = item.q;
+
+            <div class="card mb-4 shadow-sm">
+
+                <div class="card-body">
+
+                    <h5 class="fw-bold">
+                        Câu @(item.index + 1):
+                        @q.Content
+                    </h5>
+
+                    <p>
+                        <strong>Điểm:</strong>
+                        @q.Score
+                    </p>
+                    @if (q.Type == QuestionType.SingleChoice)
+                    {
+                        var options =
+                            JsonSerializer.Deserialize<List<string>>
+                            (q.OptionsJson ?? "[]") ?? new();
+
+                        foreach (var op in options)
+                        {
+                            <div class="form-check mb-2">
+
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="q_@q.Id"
+                                       value="@op" />
+
+                                <label class="form-check-label">
+                                    @op
+                                </label>
+
+                            </div>
+                        }
+                    }
+                    else if (q.Type == QuestionType.MultipleChoice)
+                    {
+                        var options =
+                            JsonSerializer.Deserialize<List<string>>
+                            (q.OptionsJson ?? "[]") ?? new();
+
+                        foreach (var op in options)
+                        {
+                            <div class="form-check mb-2">
+
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       name="q_@q.Id"
+                                       value="@op" />
+
+                                <label class="form-check-label">
+                                    @op
+                                </label>
+
+                            </div>
+                        }
+                    }
+                    else if (q.Type == QuestionType.TrueFalse)
+                    {
+                        <div class="form-check mb-2">
+
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="q_@q.Id"
+                                   value="True" />
+
+                            <label class="form-check-label">
+                                Đúng
+                            </label>
+
+                        </div>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="q_@q.Id"
+                                   value="False" />
+
+                            <label class="form-check-label">
+                                Sai
+                            </label>
+
+                        </div>
+                    }
+                    else if (q.Type == QuestionType.FillBlank)
+                    {
+                        <input type="text"
+                               class="form-control"
+                               name="q_@q.Id" />
+                    }
+                    else if (q.Type == QuestionType.Essay)
+                    {
+                        <textarea class="form-control"
+                                  rows="5"
+                                  name="q_@q.Id">
+                        </textarea>
+                    }
+                    else if (q.Type == QuestionType.Matching)
+                    {
+                        var leftItems =
+                            JsonSerializer.Deserialize<List<string>>
+                            (q.OptionsJson ?? "[]") ?? new();
+
+                        var rightItems =
+                            JsonSerializer.Deserialize<List<string>>
+                            (q.CorrectAnswerJson ?? "[]") ?? new();
+
+                        var shuffledRight =
+                            rightItems
+                            .OrderBy(x => Guid.NewGuid())
+                            .ToList();
+
+                        <div class="matching-container">
+
+                            @for (int j = 0; j < leftItems.Count; j++)
+                            {
+                                <div class="row mb-3 align-items-center">
+
+                                    <div class="col-md-5">
+
+                                        <div class="p-2 border rounded bg-light">
+
+                                            <strong>
+                                                @leftItems[j]
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-2 text-center">
+
+                                        ⟶
+
+                                    </div>
+
+                                    <div class="col-md-5">
+
+                                        <select class="form-select"
+                                                name="@($"q_{q.Id}_{j}")">
+
+                                            <option value="">
+                                                -- Ghép đáp án --
+                                            </option>
+
+                                            @foreach (var right in shuffledRight)
+                                            {
+                                                <option value="@right">
+                                                    @right
+                                                </option>
+                                            }
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+        }
+
+        <button type="submit"
+                class="btn btn-success">
+            Nộp bài
+        </button>
+
+    </form>
+
+</div>
+<script>
+
+    let totalSeconds = @(Model.Duration * 60);
+
+    let aiModel = null;
+
+    async function logAIEvent(
+        eventType,
+        description,
+        confidenceScore = 0,
+        snapshotPath = null)
+    {
+        try
+        {
+            const formData =
+                new FormData();
+
+            formData.append(
+                "examId",
+                "@Model.Id");
+
+            formData.append(
+                "eventType",
+                eventType);
+
+            formData.append(
+                "description",
+                description);
+
+            formData.append(
+                "confidenceScore",
+                confidenceScore);
+
+            if(snapshotPath)
+            {
+                formData.append(
+                    "snapshotPath",
+                    snapshotPath);
+            }
+
+            const response =
+                await fetch(
+                    "/AIProctoring/LogEvent",
+                    {
+                        method: "POST",
+                        body: formData
+                    });
+
+            const result =
+                await response.json();
+
+            if(result.autoSubmit)
+            {
+                alert(
+                    "Quá số lần cảnh báo. Bài thi sẽ được nộp.");
+
+                document
+                    .getElementById("examForm")
+                    .submit();
+            }
+        }
+        catch(ex)
+        {
+            console.log(ex);
+        }
+    }
+
+    async function startWebcam()
+    {
+        try
+        {
+            const stream =
+                await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: false
+                });
+
+            document
+                .getElementById("webcam")
+                .srcObject = stream;
+        }
+        catch (err)
+        {
+            console.log(err);
+
+            alert("Không thể mở webcam");
+        }
+    }
+
+    function startCountdown()
+    {
+        function updateCountdown()
+        {
+            const minutes =
+                Math.floor(totalSeconds / 60);
+
+            const seconds =
+                totalSeconds % 60;
+
+            document
+                .getElementById("countdownTimer")
+                .innerText =
+                `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+
+            if(totalSeconds <= 0)
+            {
+                alert("Hết thời gian làm bài!");
+
+                document
+                    .getElementById("examForm")
+                    .submit();
+
+                return;
+            }
+
+            totalSeconds--;
+        }
+
+        updateCountdown();
+
+        setInterval(
+            updateCountdown,
+            1000);
+    }
+
+    async function loadAIModel()
+    {
+        try
+        {
+            aiModel =
+                await cocoSsd.load();
+
+            console.log(
+                "AI Model Loaded");
+        }
+        catch(ex)
+        {
+            console.log(ex);
+        }
+    }
+
+    async function detectObjects()
+    {
+        const video =
+            document.getElementById(
+                "webcam");
+
+        if(!aiModel)
+            return;
+
+        setInterval(async () =>
+        {
+            try
+            {
+                if(!video.videoWidth)
+                    return;
+
+                const predictions =
+                    await aiModel.detect(
+                        video);
+
+                predictions.forEach(obj =>
+                {
+                    if(
+                        obj.class === "cell phone" &&
+                        obj.score > 0.75)
+                    {
+                        document
+                            .getElementById(
+                                "phoneDetected")
+                            .value = "true";
+
+                        logAIEvent(
+                            "PHONE",
+                            "Phát hiện điện thoại",
+                            obj.score);
+                    }
+
+                    if(
+                        obj.class === "book" &&
+                        obj.score > 0.75)
+                    {
+                        document
+                            .getElementById(
+                                "bookDetected")
+                            .value = "true";
+
+                        logAIEvent(
+                            "BOOK",
+                            "Phát hiện tài liệu",
+                            obj.score);
+                    }
+                });
+
+            }
+            catch(ex)
+            {
+                console.log(ex);
+            }
+
+        },3000);
+
+    }
+
+    function startBrowserSecurity()
+    {
+        document.addEventListener(
+            "copy",
+            function(e)
+        {
+            e.preventDefault();
+
+            logAIEvent(
+                "COPY",
+                "Copy bị chặn");
+        });
+
+        document.addEventListener(
+            "paste",
+            function(e)
+        {
+            e.preventDefault();
+
+            logAIEvent(
+                "PASTE",
+                "Paste bị chặn");
+        });
+
+        document.addEventListener(
+            "cut",
+            function(e)
+        {
+            e.preventDefault();
+
+            logAIEvent(
+                "CUT",
+                "Cut bị chặn");
+        });
+
+        document.addEventListener(
+            "keydown",
+            function(e)
+        {
+            const key =
+                e.key.toLowerCase();
+
+            if(
+                e.ctrlKey &&
+                (
+                    key === "c" ||
+                    key === "v" ||
+                    key === "x"
+                ))
+            {
+                e.preventDefault();
+
+                logAIEvent(
+                    "COPY_PASTE",
+                    "Ctrl Shortcut");
+            }
+
+            if(
+                key === "printscreen")
+            {
+                logAIEvent(
+                    "SCREENSHOT",
+                    "Print Screen");
+            }
+        });
+
+        document.addEventListener(
+            "visibilitychange",
+            function()
+        {
+            if(document.hidden)
+            {
+                logAIEvent(
+                    "TAB_SWITCH",
+                    "Chuyển tab");
+            }
+        });
+
+        window.addEventListener(
+            "blur",
+            function()
+        {
+            logAIEvent(
+                "WINDOW_BLUR",
+                "Mất focus");
+        });
+    }
+
+    function startSEBMonitor()
+    {
+        setInterval(async () =>
+        {
+            try
+            {
+                const response =
+                    await fetch(
+                        "/AIProctoring/CheckSEB");
+
+                const result =
+                    await response.json();
+
+                if(!result.isSEB)
+                {
+                    logAIEvent(
+                        "SEB_CLOSED",
+                        "Safe Exam Browser đã đóng");
+                }
+            }
+            catch(ex)
+            {
+                console.log(ex);
+            }
+
+        },5000);
+    }
+
+    document.addEventListener(
+        "fullscreenchange",
+        function()
+    {
+        if(!document.fullscreenElement)
+        {
+            logAIEvent(
+                "EXIT_FULLSCREEN",
+                "Thoát fullscreen");
+
+            setTimeout(() =>
+            {
+                document
+                    .documentElement
+                    .requestFullscreen();
+            },500);
+        }
+    });
+
+    document
+        .getElementById("startExamBtn")
+        .addEventListener(
+            "click",
+            async function()
+    {
+        try
+        {
+            if(document.documentElement.requestFullscreen)
+            {
+                await document
+                    .documentElement
+                    .requestFullscreen();
+            }
+
+            document
+                .getElementById("examForm")
+                .style.display = "block";
+
+            document
+                .getElementById("timerBox")
+                .style.display = "block";
+
+            document
+                .getElementById("webcamBox")
+                .style.display = "block";
+
+            this.style.display = "none";
+
+            await startWebcam();
+
+            startCountdown();
+
+            await loadAIModel();
+
+            detectObjects();
+
+            startBrowserSecurity();
+
+            startSEBMonitor();
+        }
+        catch(ex)
+        {
+            console.log(ex);
+        }
+    });
+
+</script>

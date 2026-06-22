@@ -1,0 +1,501 @@
+{
+  "Title": "Đề thi World Cup",
+  "Subject": "Bóng đá",
+  "Duration": 45,
+  "Questions": [
+    {
+      "Type": "SingleChoice",
+      "Content": "World Cup đầu tiên được tổ chức vào năm nào?",
+      "Options": [
+        "1926",
+        "1930",
+        "1934",
+        "1938"
+      ],
+      "CorrectAnswers": [
+        "1930"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Quốc gia nào đăng cai World Cup 1930?",
+      "Options": [
+        "Brazil",
+        "Argentina",
+        "Uruguay",
+        "Ý"
+      ],
+      "CorrectAnswers": [
+        "Uruguay"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Đội tuyển nào vô địch World Cup 2018?",
+      "Options": [
+        "Pháp",
+        "Croatia",
+        "Đức",
+        "Brazil"
+      ],
+      "CorrectAnswers": [
+        "Pháp"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 4?",
+      "Options": [
+        "Đáp án A4",
+        "Đáp án B4",
+        "Đáp án C4",
+        "Đáp án D4"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A4"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 5?",
+      "Options": [
+        "Đáp án A5",
+        "Đáp án B5",
+        "Đáp án C5",
+        "Đáp án D5"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A5"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 6?",
+      "Options": [
+        "Đáp án A6",
+        "Đáp án B6",
+        "Đáp án C6",
+        "Đáp án D6"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A6"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 7?",
+      "Options": [
+        "Đáp án A7",
+        "Đáp án B7",
+        "Đáp án C7",
+        "Đáp án D7"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A7"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 8?",
+      "Options": [
+        "Đáp án A8",
+        "Đáp án B8",
+        "Đáp án C8",
+        "Đáp án D8"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A8"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 9?",
+      "Options": [
+        "Đáp án A9",
+        "Đáp án B9",
+        "Đáp án C9",
+        "Đáp án D9"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A9"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 10?",
+      "Options": [
+        "Đáp án A10",
+        "Đáp án B10",
+        "Đáp án C10",
+        "Đáp án D10"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A10"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 11?",
+      "Options": [
+        "Đáp án A11",
+        "Đáp án B11",
+        "Đáp án C11",
+        "Đáp án D11"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A11"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 12?",
+      "Options": [
+        "Đáp án A12",
+        "Đáp án B12",
+        "Đáp án C12",
+        "Đáp án D12"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A12"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 13?",
+      "Options": [
+        "Đáp án A13",
+        "Đáp án B13",
+        "Đáp án C13",
+        "Đáp án D13"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A13"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 14?",
+      "Options": [
+        "Đáp án A14",
+        "Đáp án B14",
+        "Đáp án C14",
+        "Đáp án D14"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A14"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 15?",
+      "Options": [
+        "Đáp án A15",
+        "Đáp án B15",
+        "Đáp án C15",
+        "Đáp án D15"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A15"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 16?",
+      "Options": [
+        "Đáp án A16",
+        "Đáp án B16",
+        "Đáp án C16",
+        "Đáp án D16"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A16"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Nhận biết"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 17?",
+      "Options": [
+        "Đáp án A17",
+        "Đáp án B17",
+        "Đáp án C17",
+        "Đáp án D17"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A17"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 18?",
+      "Options": [
+        "Đáp án A18",
+        "Đáp án B18",
+        "Đáp án C18",
+        "Đáp án D18"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A18"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 19?",
+      "Options": [
+        "Đáp án A19",
+        "Đáp án B19",
+        "Đáp án C19",
+        "Đáp án D19"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A19"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 20?",
+      "Options": [
+        "Đáp án A20",
+        "Đáp án B20",
+        "Đáp án C20",
+        "Đáp án D20"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A20"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 21?",
+      "Options": [
+        "Đáp án A21",
+        "Đáp án B21",
+        "Đáp án C21",
+        "Đáp án D21"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A21"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 22?",
+      "Options": [
+        "Đáp án A22",
+        "Đáp án B22",
+        "Đáp án C22",
+        "Đáp án D22"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A22"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 23?",
+      "Options": [
+        "Đáp án A23",
+        "Đáp án B23",
+        "Đáp án C23",
+        "Đáp án D23"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A23"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 24?",
+      "Options": [
+        "Đáp án A24",
+        "Đáp án B24",
+        "Đáp án C24",
+        "Đáp án D24"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A24"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 25?",
+      "Options": [
+        "Đáp án A25",
+        "Đáp án B25",
+        "Đáp án C25",
+        "Đáp án D25"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A25"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 26?",
+      "Options": [
+        "Đáp án A26",
+        "Đáp án B26",
+        "Đáp án C26",
+        "Đáp án D26"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A26"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 27?",
+      "Options": [
+        "Đáp án A27",
+        "Đáp án B27",
+        "Đáp án C27",
+        "Đáp án D27"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A27"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 28?",
+      "Options": [
+        "Đáp án A28",
+        "Đáp án B28",
+        "Đáp án C28",
+        "Đáp án D28"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A28"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 29?",
+      "Options": [
+        "Đáp án A29",
+        "Đáp án B29",
+        "Đáp án C29",
+        "Đáp án D29"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A29"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 30?",
+      "Options": [
+        "Đáp án A30",
+        "Đáp án B30",
+        "Đáp án C30",
+        "Đáp án D30"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A30"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 31?",
+      "Options": [
+        "Đáp án A31",
+        "Đáp án B31",
+        "Đáp án C31",
+        "Đáp án D31"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A31"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "SingleChoice",
+      "Content": "Câu hỏi World Cup số 32?",
+      "Options": [
+        "Đáp án A32",
+        "Đáp án B32",
+        "Đáp án C32",
+        "Đáp án D32"
+      ],
+      "CorrectAnswers": [
+        "Đáp án A32"
+      ],
+      "Score": 0.25,
+      "Difficulty": "Thông hiểu"
+    },
+    {
+      "Type": "Essay",
+      "Content": "Phân tích ý nghĩa chiến thắng World Cup 2022 của Argentina.",
+      "Answer": "Argentina vô địch World Cup 2022 giúp khẳng định vị thế của Lionel Messi và mang lại niềm tự hào lớn cho người hâm mộ.",
+      "Score": 1,
+      "Difficulty": "Vận dụng"
+    },
+    {
+      "Type": "Essay",
+      "Content": "Nêu tác động của việc mở rộng số đội tham dự World Cup.",
+      "Answer": "Việc mở rộng số đội giúp nhiều quốc gia có cơ hội tham gia nhưng cũng tạo áp lực về lịch thi đấu.",
+      "Score": 1,
+      "Difficulty": "Vận dụng cao"
+    }
+  ]
+}

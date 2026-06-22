@@ -1,0 +1,25 @@
+﻿@model List<AIProctoringLog>
+<h2>Báo cáo AI giám sát</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Học sinh</th>
+            <th>Loại</th>
+            <th>Mô tả</th>
+            <th>Thời gian</th>
+            <th>IP</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.StudentId</td>
+                <td>@x.EventType</td>
+                <td>@x.Description</td>
+                <td>@x.TimeDetected</td>
+                <td>@x.IPAddress</td>
+            </tr>
+        }
+    </tbody>
+</table>

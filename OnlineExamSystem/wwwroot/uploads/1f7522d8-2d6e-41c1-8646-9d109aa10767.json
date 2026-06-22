@@ -1,0 +1,349 @@
+{
+  "Title": "Lịch sử 22 kỳ FIFA World Cup và World Cup 2026",
+  "TotalScore": 10,
+  "Questions": [
+    {
+      "Content": "FIFA World Cup đầu tiên được tổ chức vào năm nào?",
+      "Type": "SingleChoice",
+      "Options": ["1926","1930","1934","1938"],
+      "CorrectAnswer": "1930",
+      "Score": 0.2,
+      "Order": 1
+    },
+    {
+      "Content": "Quốc gia đăng cai World Cup 1930 là?",
+      "Type": "SingleChoice",
+      "Options": ["Brazil","Argentina","Uruguay","Chile"],
+      "CorrectAnswer": "Uruguay",
+      "Score": 0.2,
+      "Order": 2
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 1930 là?",
+      "Type": "SingleChoice",
+      "Options": ["Argentina","Uruguay","Brazil","Italy"],
+      "CorrectAnswer": "Uruguay",
+      "Score": 0.2,
+      "Order": 3
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup 1934 là?",
+      "Type": "SingleChoice",
+      "Options": ["Italy","Germany","Austria","Hungary"],
+      "CorrectAnswer": "Italy",
+      "Score": 0.2,
+      "Order": 4
+    },
+    {
+      "Content": "World Cup 1938 được tổ chức tại quốc gia nào?",
+      "Type": "SingleChoice",
+      "Options": ["Italy","France","Spain","Belgium"],
+      "CorrectAnswer": "France",
+      "Score": 0.2,
+      "Order": 5
+    },
+    {
+      "Content": "Hai kỳ World Cup nào bị hủy do Thế chiến II?",
+      "Type": "SingleChoice",
+      "Options": ["1942 và 1946","1946 và 1950","1942 và 1948","1944 và 1948"],
+      "CorrectAnswer": "1942 và 1946",
+      "Score": 0.2,
+      "Order": 6
+    },
+    {
+      "Content": "Đội vô địch World Cup 1950 là?",
+      "Type": "SingleChoice",
+      "Options": ["Brazil","Uruguay","Spain","England"],
+      "CorrectAnswer": "Uruguay",
+      "Score": 0.2,
+      "Order": 7
+    },
+    {
+      "Content": "World Cup 1954 được tổ chức tại đâu?",
+      "Type": "SingleChoice",
+      "Options": ["Áo","Thụy Sĩ","Đức","Thụy Điển"],
+      "CorrectAnswer": "Thụy Sĩ",
+      "Score": 0.2,
+      "Order": 8
+    },
+    {
+      "Content": "Đội vô địch World Cup 1954 là?",
+      "Type": "SingleChoice",
+      "Options": ["Hungary","Tây Đức","Brazil","Áo"],
+      "CorrectAnswer": "Tây Đức",
+      "Score": 0.2,
+      "Order": 9
+    },
+    {
+      "Content": "Pele lần đầu vô địch World Cup năm nào?",
+      "Type": "SingleChoice",
+      "Options": ["1954","1958","1962","1970"],
+      "CorrectAnswer": "1958",
+      "Score": 0.2,
+      "Order": 10
+    },
+
+    {
+      "Content": "Đội vô địch World Cup 1962 là?",
+      "Type": "SingleChoice",
+      "Options": ["Brazil","Chile","Tiệp Khắc","Italy"],
+      "CorrectAnswer": "Brazil",
+      "Score": 0.2,
+      "Order": 11
+    },
+    {
+      "Content": "Đội vô địch World Cup 1966 là?",
+      "Type": "SingleChoice",
+      "Options": ["Anh","Đức","Brazil","Bồ Đào Nha"],
+      "CorrectAnswer": "Anh",
+      "Score": 0.2,
+      "Order": 12
+    },
+    {
+      "Content": "Đội vô địch World Cup 1970 là?",
+      "Type": "SingleChoice",
+      "Options": ["Italy","Brazil","Đức","Uruguay"],
+      "CorrectAnswer": "Brazil",
+      "Score": 0.2,
+      "Order": 13
+    },
+    {
+      "Content": "World Cup 1974 diễn ra tại quốc gia nào?",
+      "Type": "SingleChoice",
+      "Options": ["Hà Lan","Tây Đức","Áo","Bỉ"],
+      "CorrectAnswer": "Tây Đức",
+      "Score": 0.2,
+      "Order": 14
+    },
+    {
+      "Content": "Đội vô địch World Cup 1978 là?",
+      "Type": "SingleChoice",
+      "Options": ["Argentina","Brazil","Italy","Hà Lan"],
+      "CorrectAnswer": "Argentina",
+      "Score": 0.2,
+      "Order": 15
+    },
+    {
+      "Content": "Đội vô địch World Cup 1982 là?",
+      "Type": "SingleChoice",
+      "Options": ["Italy","Brazil","Đức","Pháp"],
+      "CorrectAnswer": "Italy",
+      "Score": 0.2,
+      "Order": 16
+    },
+    {
+      "Content": "World Cup 1986 tổ chức tại đâu?",
+      "Type": "SingleChoice",
+      "Options": ["Mexico","Mỹ","Argentina","Tây Ban Nha"],
+      "CorrectAnswer": "Mexico",
+      "Score": 0.2,
+      "Order": 17
+    },
+    {
+      "Content": "Đội vô địch World Cup 1986 là?",
+      "Type": "SingleChoice",
+      "Options": ["Argentina","Đức","Brazil","Pháp"],
+      "CorrectAnswer": "Argentina",
+      "Score": 0.2,
+      "Order": 18
+    },
+    {
+      "Content": "Maradona nổi bật nhất tại World Cup nào?",
+      "Type": "SingleChoice",
+      "Options": ["1978","1982","1986","1990"],
+      "CorrectAnswer": "1986",
+      "Score": 0.2,
+      "Order": 19
+    },
+    {
+      "Content": "Đội vô địch World Cup 1990 là?",
+      "Type": "SingleChoice",
+      "Options": ["Argentina","Ý","Tây Đức","Brazil"],
+      "CorrectAnswer": "Tây Đức",
+      "Score": 0.2,
+      "Order": 20
+    },
+
+    {
+      "Content": "World Cup 1994 được tổ chức tại quốc gia nào?",
+      "Type": "SingleChoice",
+      "Options": ["Mexico","Hoa Kỳ","Canada","Brazil"],
+      "CorrectAnswer": "Hoa Kỳ",
+      "Score": 0.2,
+      "Order": 21
+    },
+    {
+      "Content": "Đội vô địch World Cup 1994 là?",
+      "Type": "SingleChoice",
+      "Options": ["Italy","Brazil","Argentina","Đức"],
+      "CorrectAnswer": "Brazil",
+      "Score": 0.2,
+      "Order": 22
+    },
+    {
+      "Content": "Đội vô địch World Cup 1998 là?",
+      "Type": "SingleChoice",
+      "Options": ["Brazil","Pháp","Croatia","Hà Lan"],
+      "CorrectAnswer": "Pháp",
+      "Score": 0.2,
+      "Order": 23
+    },
+    {
+      "Content": "World Cup 2002 được đồng tổ chức bởi?",
+      "Type": "SingleChoice",
+      "Options": ["Nhật Bản và Hàn Quốc","Nhật Bản và Trung Quốc","Hàn Quốc và Trung Quốc","Nhật Bản và Thái Lan"],
+      "CorrectAnswer": "Nhật Bản và Hàn Quốc",
+      "Score": 0.2,
+      "Order": 24
+    },
+    {
+      "Content": "Đội vô địch World Cup 2002 là?",
+      "Type": "SingleChoice",
+      "Options": ["Đức","Brazil","Thổ Nhĩ Kỳ","Hàn Quốc"],
+      "CorrectAnswer": "Brazil",
+      "Score": 0.2,
+      "Order": 25
+    },
+    {
+      "Content": "Đội vô địch World Cup 2006 là?",
+      "Type": "SingleChoice",
+      "Options": ["Pháp","Ý","Đức","Bồ Đào Nha"],
+      "CorrectAnswer": "Ý",
+      "Score": 0.2,
+      "Order": 26
+    },
+    {
+      "Content": "World Cup 2010 được tổ chức tại đâu?",
+      "Type": "SingleChoice",
+      "Options": ["Nam Phi","Ai Cập","Morocco","Nigeria"],
+      "CorrectAnswer": "Nam Phi",
+      "Score": 0.2,
+      "Order": 27
+    },
+    {
+      "Content": "Đội vô địch World Cup 2010 là?",
+      "Type": "SingleChoice",
+      "Options": ["Hà Lan","Tây Ban Nha","Đức","Uruguay"],
+      "CorrectAnswer": "Tây Ban Nha",
+      "Score": 0.2,
+      "Order": 28
+    },
+    {
+      "Content": "Đội vô địch World Cup 2014 là?",
+      "Type": "SingleChoice",
+      "Options": ["Brazil","Argentina","Đức","Hà Lan"],
+      "CorrectAnswer": "Đức",
+      "Score": 0.2,
+      "Order": 29
+    },
+    {
+      "Content": "Đội vô địch World Cup 2018 là?",
+      "Type": "SingleChoice",
+      "Options": ["Croatia","Pháp","Bỉ","Anh"],
+      "CorrectAnswer": "Pháp",
+      "Score": 0.2,
+      "Order": 30
+    },
+
+    {
+      "Content": "World Cup 2022 được tổ chức tại quốc gia nào?",
+      "Type": "SingleChoice",
+      "Options": ["Qatar","UAE","Saudi Arabia","Kuwait"],
+      "CorrectAnswer": "Qatar",
+      "Score": 0.2,
+      "Order": 31
+    },
+    {
+      "Content": "Đội vô địch World Cup 2022 là?",
+      "Type": "SingleChoice",
+      "Options": ["Pháp","Argentina","Croatia","Morocco"],
+      "CorrectAnswer": "Argentina",
+      "Score": 0.2,
+      "Order": 32
+    },
+    {
+      "Content": "Đội tuyển vô địch World Cup nhiều lần nhất là?",
+      "Type": "SingleChoice",
+      "Options": ["Đức","Ý","Brazil","Argentina"],
+      "CorrectAnswer": "Brazil",
+      "Score": 0.2,
+      "Order": 33
+    },
+    {
+      "Content": "Pele đã vô địch World Cup bao nhiêu lần?",
+      "Type": "SingleChoice",
+      "Options": ["2","3","4","5"],
+      "CorrectAnswer": "3",
+      "Score": 0.2,
+      "Order": 34
+    },
+    {
+      "Content": "Đội tuyển châu Phi nào từng vô địch World Cup?",
+      "Type": "SingleChoice",
+      "Options": ["Cameroon","Morocco","Senegal","Chưa có đội nào"],
+      "CorrectAnswer": "Chưa có đội nào",
+      "Score": 0.2,
+      "Order": 35
+    },
+    {
+      "Content": "Tính đến hết World Cup 2022 đã có bao nhiêu kỳ World Cup được tổ chức?",
+      "Type": "SingleChoice",
+      "Options": ["20","21","22","23"],
+      "CorrectAnswer": "22",
+      "Score": 0.2,
+      "Order": 36
+    },
+    {
+      "Content": "World Cup 2026 sẽ được đồng tổ chức bởi bao nhiêu quốc gia?",
+      "Type": "SingleChoice",
+      "Options": ["1","2","3","4"],
+      "CorrectAnswer": "3",
+      "Score": 0.2,
+      "Order": 37
+    },
+    {
+      "Content": "Ba nước đồng chủ nhà World Cup 2026 là?",
+      "Type": "SingleChoice",
+      "Options": [
+        "Mỹ, Canada, Mexico",
+        "Mỹ, Brazil, Canada",
+        "Mexico, Argentina, Mỹ",
+        "Canada, Costa Rica, Mỹ"
+      ],
+      "CorrectAnswer": "Mỹ, Canada, Mexico",
+      "Score": 0.2,
+      "Order": 38
+    },
+    {
+      "Content": "World Cup 2026 sẽ có bao nhiêu đội tham dự?",
+      "Type": "SingleChoice",
+      "Options": ["32","40","48","64"],
+      "CorrectAnswer": "48",
+      "Score": 0.2,
+      "Order": 39
+    },
+    {
+      "Content": "World Cup 2026 dự kiến là kỳ World Cup thứ mấy?",
+      "Type": "SingleChoice",
+      "Options": ["22","23","24","25"],
+      "CorrectAnswer": "23",
+      "Score": 0.2,
+      "Order": 40
+    },
+
+    {
+      "Content": "Phân tích quá trình phát triển của FIFA World Cup từ năm 1930 đến 2022 và ý nghĩa của giải đấu đối với bóng đá thế giới.",
+      "Type": "Essay",
+      "CorrectAnswer": "Trình bày các cột mốc lịch sử, sự mở rộng số đội, ảnh hưởng kinh tế, văn hóa và thể thao toàn cầu.",
+      "Score": 1,
+      "Order": 41
+    },
+    {
+      "Content": "So sánh thành tích World Cup của Brazil, Đức và Argentina; đánh giá cơ hội của các nền bóng đá lớn tại World Cup 2026.",
+      "Type": "Essay",
+      "CorrectAnswer": "Nêu thành tích, số lần vô địch, các giai đoạn thành công và nhận định dựa trên lực lượng hiện tại.",
+      "Score": 1,
+      "Order": 42
+    }
+  ]
+}

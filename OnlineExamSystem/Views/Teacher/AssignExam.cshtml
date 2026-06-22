@@ -1,0 +1,125 @@
+﻿@model List<User>
+
+@{
+    ViewData["Title"] = "Phân đề cho sinh viên";
+}
+<div class="container mt-4">
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-primary text-white">
+
+            <h4 class="mb-0">
+
+                Phân đề cho sinh viên
+
+            </h4>
+
+        </div>
+        <div class="card-body">
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show">
+
+                    @TempData["Success"]
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert">
+                    </button>
+
+                </div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show">
+
+                    @TempData["Error"]
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert">
+                    </button>
+
+                </div>
+            }
+            <form asp-action="AssignExam"
+                  method="post">
+
+                <input type="hidden"
+                       name="examId"
+                       value="@ViewBag.ExamId" />
+
+                <div class="mb-3">
+
+                    <button type="button"
+                            class="btn btn-outline-secondary btn-sm"
+                            onclick="toggleAll()">
+
+                        Chọn / Bỏ chọn tất cả
+
+                    </button>
+
+                </div>
+                @foreach (var s in Model)
+                {
+                    <div class="form-check border rounded p-3 mb-2 shadow-sm">
+
+                        <input class="form-check-input student-checkbox"
+                               type="checkbox"
+                               name="students"
+                               value="@s.Username"
+                               id="st_@s.Username" />
+
+                        <label class="form-check-label fw-bold"
+                               for="st_@s.Username">
+
+                            @s.Username
+
+                        </label>
+
+                    </div>
+                }
+                <div class="d-flex gap-2 mt-4">
+
+                    <button type="submit"
+                            class="btn btn-success">
+
+                        Phân bổ đề thi
+
+                    </button>
+
+                    <a asp-action="EditExam"
+                       asp-route-id="@ViewBag.ExamId"
+                       class="btn btn-secondary">
+
+                        Quay lại
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+    function toggleAll()
+    {
+        let boxes =
+            document.querySelectorAll(
+                ".student-checkbox");
+
+        let allChecked =
+            [...boxes].every(x => x.checked);
+
+        boxes.forEach(x =>
+        {
+            x.checked = !allChecked;
+        });
+    }
+</script>

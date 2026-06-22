@@ -1,0 +1,112 @@
+﻿@model IEnumerable<OnlineExamSystem.Models.ExamSession>
+@{
+    ViewData["Title"] = "Danh sách kỳ thi";
+}
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Danh sách kỳ thi</h2>
+        <a asp-action="CreateSession"
+               class="btn btn-primary">
+            Tạo kỳ thi
+        </a>
+        <a asp-controller="QuestionBank"
+           asp-action="Index"
+           class="btn btn-warning">
+            Ngân hàng câu hỏi
+        </a>
+    </div>
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+    @if (Model != null && Model.Any())
+    {
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th width="80">ID</th>
+                            <th>Tên Kỳ Thi</th>
+                            <th>Bắt đầu</th>
+                            <th>Kết thúc</th>
+                            <th>Trạng thái</th>
+                            <th width="280">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Id
+                                </td>
+                                <td>
+                                    @item.Name
+                                </td>
+                                <td>
+                                    @item.StartTime.ToString("dd/MM/yyyy HH:mm")
+                                </td>
+                                <td>
+                                    @item.EndTime.ToString("dd/MM/yyyy HH:mm")
+                                </td>
+                                <td>
+                                    @if (item.EndTime < DateTime.Now)
+                                    {
+                                        <span class="badge bg-danger">
+                                            Đã hết hạn
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">
+                                            Đang hoạt động
+                                        </span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="ExamSessionDetails"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-info btn-sm">
+                                        Chi tiết
+                                    </a>
+
+                                    <a asp-action="EditSession"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-warning btn-sm">
+                                        Sửa
+                                    </a>
+                                    <form asp-action="Delete"
+                                          asp-route-id="@item.Id"
+                                          method="post"
+                                          style="display:inline;">
+                                        <button type="submit"
+                                                class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Bạn có chắc muốn xóa kỳ thi này?')">
+                                            Xóa
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            Chưa có kỳ thi nào.
+        </div>
+    }
+</div>

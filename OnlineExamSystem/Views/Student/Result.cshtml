@@ -1,0 +1,194 @@
+﻿@{
+    ViewData["Title"] = "Kết quả bài thi";
+
+    double totalScore =
+        ViewBag.TotalScore ?? 0;
+
+    double objectiveScore =
+        ViewBag.ObjectiveScore ?? 0;
+
+    double essayScore =
+        ViewBag.EssayScore ?? 0;
+
+    double finalScore =
+        ViewBag.FinalScore ?? 0;
+
+    bool isPassed =
+        finalScore >= (totalScore * 0.5);
+
+    double percent =
+        totalScore > 0
+        ? (finalScore / totalScore) * 100
+        : 0;
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white">
+
+            <h2 class="mb-0">
+                Kết quả bài thi
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["Success"]
+                </div>
+            }
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["Error"]
+                </div>
+            }
+
+            <div class="row text-center mb-4">
+
+                <!-- Tổng điểm -->
+                <div class="col-md-4 mb-3">
+
+                    <div class="card border-primary shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <h5 class="text-primary">
+                                Tổng điểm
+                            </h5>
+
+                            <h1 class="fw-bold">
+                                @finalScore / @totalScore
+                            </h1>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Trắc nghiệm -->
+                <div class="col-md-4 mb-3">
+
+                    <div class="card border-success shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <h5 class="text-success">
+                                Trắc nghiệm
+                            </h5>
+
+                            <h2 class="fw-bold">
+                                @objectiveScore
+                            </h2>
+
+                            <small class="text-muted">
+                                Điểm tính tự động
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Tự luận -->
+                <div class="col-md-4 mb-3">
+
+                    <div class="card border-warning shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <h5 class="text-warning">
+                                Điểm tự luận
+                            </h5>
+
+                            <h2 class="fw-bold">
+                                @essayScore
+                            </h2>
+
+                            <small class="text-muted">
+                                Chấm bởi giáo viên
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Thanh tiến trình -->
+            <div class="mb-4">
+
+                <div class="progress" style="height:35px;">
+
+                    <div class="progress-bar @(isPassed ? "bg-success" : "bg-danger")"
+                         role="progressbar"
+                         style="width:@percent%;">
+
+                        @Math.Round(percent, 2)%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Kết quả -->
+            <div class="text-center mb-4">
+
+                @if (isPassed)
+                {
+                    <div class="alert alert-success">
+
+                        <h4 class="mb-0">
+                            🎉 Chúc mừng! Bạn đã vượt qua bài thi.
+                        </h4>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+
+                        <h4 class="mb-0">
+                            ❌ Bạn chưa đạt yêu cầu.
+                        </h4>
+
+                    </div>
+                }
+
+            </div>
+
+            <!-- Nút điều hướng -->
+            <div class="d-flex justify-content-center gap-3">
+
+                <a asp-action="Index"
+                   class="btn btn-primary btn-lg">
+
+                    Quay lại danh sách thi
+
+                </a>
+
+                <a href="/"
+                   class="btn btn-secondary btn-lg">
+
+                    Trang chủ
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

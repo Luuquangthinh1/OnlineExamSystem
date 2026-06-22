@@ -1,0 +1,123 @@
+﻿@model User
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header
+            bg-primary
+            text-white">
+
+            <h3>
+                Thông tin người dùng
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table">
+
+                <tr>
+                    <th width="250">
+                        Họ tên
+                    </th>
+
+                    <td>
+                        @Model.FullName
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Tài khoản
+                    </th>
+
+                    <td>
+                        @Model.Username
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+
+                    <td>
+                        @Model.Email
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Số điện thoại
+                    </th>
+
+                    <td>
+                        @Model.PhoneNumber
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Chức vụ
+                    </th>
+
+                    <td>
+
+                        <span class="badge bg-info">
+                            @Model.Role
+                        </span>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Ngày tạo
+                    </th>
+
+                    <td>
+
+                        @Model.CreatedAt
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Đăng nhập cuối
+                    </th>
+
+                    <td>
+
+                        @(Model.LastLoginAt
+                            ?.ToString(
+                                "dd/MM/yyyy HH:mm")
+                            ?? "Chưa đăng nhập")
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Tổng lượt đăng nhập
+                    </th>
+
+                    <td>
+                        @Model.LoginCount
+                    </td>
+                </tr>
+
+            </table>
+
+            <a href="/Admin/Users"
+               class="btn btn-secondary">
+
+                Quay lại
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

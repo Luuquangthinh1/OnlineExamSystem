@@ -1,0 +1,357 @@
+{
+  "title": "Lịch sử 22 kỳ World Cup đã tổ chức",
+  "subject": "Lịch sử World Cup",
+  "totalScore": 10,
+  "questions": [
+    {
+      "id": 1,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Kỳ FIFA World Cup đầu tiên được tổ chức vào năm nào?",
+      "options": ["1926", "1930", "1934", "1938"],
+      "answer": "1930"
+    },
+    {
+      "id": 2,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Quốc gia đăng cai World Cup 1930 là?",
+      "options": ["Argentina", "Brazil", "Uruguay", "Chile"],
+      "answer": "Uruguay"
+    },
+    {
+      "id": 3,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1930 là?",
+      "options": ["Argentina", "Uruguay", "Italy", "Brazil"],
+      "answer": "Uruguay"
+    },
+    {
+      "id": 4,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1934 là?",
+      "options": ["Germany", "Italy", "Hungary", "Austria"],
+      "answer": "Italy"
+    },
+    {
+      "id": 5,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 1938 được tổ chức tại?",
+      "options": ["Italy", "France", "Spain", "Belgium"],
+      "answer": "France"
+    },
+    {
+      "id": 6,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Hai kỳ World Cup bị hủy do Thế chiến II là?",
+      "options": ["1942 và 1946", "1942 và 1950", "1942 và 1944", "1942 và 1948"],
+      "answer": "1942 và 1946"
+    },
+    {
+      "id": 7,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1950 là?",
+      "options": ["Brazil", "Uruguay", "Spain", "England"],
+      "answer": "Uruguay"
+    },
+    {
+      "id": 8,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 1954 được tổ chức tại?",
+      "options": ["Austria", "Switzerland", "Germany", "Sweden"],
+      "answer": "Switzerland"
+    },
+    {
+      "id": 9,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1954 là?",
+      "options": ["Hungary", "West Germany", "Brazil", "Austria"],
+      "answer": "West Germany"
+    },
+    {
+      "id": 10,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1958 là?",
+      "options": ["Brazil", "Sweden", "France", "Germany"],
+      "answer": "Brazil"
+    },
+    {
+      "id": 11,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Pele lần đầu vô địch World Cup vào năm?",
+      "options": ["1954", "1958", "1962", "1970"],
+      "answer": "1958"
+    },
+    {
+      "id": 12,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1962 là?",
+      "options": ["Brazil", "Chile", "Czechoslovakia", "Italy"],
+      "answer": "Brazil"
+    },
+    {
+      "id": 13,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1966 là?",
+      "options": ["Germany", "England", "Portugal", "Brazil"],
+      "answer": "England"
+    },
+    {
+      "id": 14,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1970 là?",
+      "options": ["Italy", "Brazil", "Germany", "Uruguay"],
+      "answer": "Brazil"
+    },
+    {
+      "id": 15,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 1974 được tổ chức tại?",
+      "options": ["Netherlands", "West Germany", "Belgium", "Austria"],
+      "answer": "West Germany"
+    },
+    {
+      "id": 16,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1974 là?",
+      "options": ["Netherlands", "Brazil", "West Germany", "Poland"],
+      "answer": "West Germany"
+    },
+    {
+      "id": 17,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1978 là?",
+      "options": ["Argentina", "Netherlands", "Brazil", "Italy"],
+      "answer": "Argentina"
+    },
+    {
+      "id": 18,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1982 là?",
+      "options": ["Germany", "Italy", "Brazil", "France"],
+      "answer": "Italy"
+    },
+    {
+      "id": 19,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 1986 diễn ra tại?",
+      "options": ["Mexico", "USA", "Spain", "Argentina"],
+      "answer": "Mexico"
+    },
+    {
+      "id": 20,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1986 là?",
+      "options": ["Germany", "Argentina", "Brazil", "France"],
+      "answer": "Argentina"
+    },
+    {
+      "id": 21,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Diego Maradona nổi bật nhất ở World Cup nào?",
+      "options": ["1978", "1982", "1986", "1990"],
+      "answer": "1986"
+    },
+    {
+      "id": 22,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1990 là?",
+      "options": ["Argentina", "Italy", "West Germany", "Brazil"],
+      "answer": "West Germany"
+    },
+    {
+      "id": 23,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 1994 được tổ chức tại?",
+      "options": ["Mexico", "USA", "Canada", "Brazil"],
+      "answer": "USA"
+    },
+    {
+      "id": 24,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1994 là?",
+      "options": ["Italy", "Brazil", "Germany", "Argentina"],
+      "answer": "Brazil"
+    },
+    {
+      "id": 25,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 1998 là?",
+      "options": ["Brazil", "France", "Croatia", "Netherlands"],
+      "answer": "France"
+    },
+    {
+      "id": 26,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 2002 được đồng tổ chức bởi?",
+      "options": ["Japan và China", "Japan và South Korea", "China và South Korea", "Thailand và Japan"],
+      "answer": "Japan và South Korea"
+    },
+    {
+      "id": 27,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 2002 là?",
+      "options": ["Germany", "Brazil", "Turkey", "South Korea"],
+      "answer": "Brazil"
+    },
+    {
+      "id": 28,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 2006 là?",
+      "options": ["France", "Italy", "Germany", "Portugal"],
+      "answer": "Italy"
+    },
+    {
+      "id": 29,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 2010 được tổ chức tại?",
+      "options": ["Egypt", "South Africa", "Morocco", "Nigeria"],
+      "answer": "South Africa"
+    },
+    {
+      "id": 30,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 2010 là?",
+      "options": ["Netherlands", "Spain", "Germany", "Uruguay"],
+      "answer": "Spain"
+    },
+    {
+      "id": 31,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 2014 là?",
+      "options": ["Argentina", "Brazil", "Germany", "Netherlands"],
+      "answer": "Germany"
+    },
+    {
+      "id": 32,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Trận chung kết World Cup 2014 diễn ra giữa Đức và?",
+      "options": ["Brazil", "Spain", "Argentina", "Netherlands"],
+      "answer": "Argentina"
+    },
+    {
+      "id": 33,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 2018 được tổ chức tại?",
+      "options": ["Russia", "Germany", "England", "Poland"],
+      "answer": "Russia"
+    },
+    {
+      "id": 34,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 2018 là?",
+      "options": ["Croatia", "France", "Belgium", "England"],
+      "answer": "France"
+    },
+    {
+      "id": 35,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "World Cup 2022 được tổ chức tại?",
+      "options": ["Qatar", "UAE", "Saudi Arabia", "Kuwait"],
+      "answer": "Qatar"
+    },
+    {
+      "id": 36,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội vô địch World Cup 2022 là?",
+      "options": ["France", "Argentina", "Croatia", "Morocco"],
+      "answer": "Argentina"
+    },
+    {
+      "id": 37,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Quốc gia vô địch World Cup nhiều lần nhất tính đến sau World Cup 2022 là?",
+      "options": ["Germany", "Italy", "Brazil", "Argentina"],
+      "answer": "Brazil"
+    },
+    {
+      "id": 38,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Cầu thủ duy nhất vô địch World Cup 3 lần là ai?",
+      "options": ["Maradona", "Messi", "Pele", "Beckenbauer"],
+      "answer": "Pele"
+    },
+    {
+      "id": 39,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Đội tuyển nào giành chức vô địch World Cup đầu tiên của châu Phi?",
+      "options": ["Cameroon", "Không có đội nào", "Morocco", "Senegal"],
+      "answer": "Không có đội nào"
+    },
+    {
+      "id": 40,
+      "type": "singlechoice",
+      "score": 0.2,
+      "question": "Tính đến hết World Cup 2022 đã có bao nhiêu kỳ World Cup được tổ chức?",
+      "options": ["20", "21", "22", "23"],
+      "answer": "22"
+    },
+    {
+      "id": 41,
+      "type": "essay",
+      "score": 1,
+      "question": "Trình bày quá trình phát triển của FIFA World Cup từ năm 1930 đến năm 2022. Nêu các cột mốc quan trọng, sự thay đổi về số đội tham dự và ý nghĩa của giải đấu đối với bóng đá thế giới.",
+      "rubric": {
+        "maxScore": 1,
+        "requirements": [
+          "Nêu đúng các giai đoạn phát triển",
+          "Đề cập sự mở rộng số đội tham dự",
+          "Phân tích ý nghĩa lịch sử và tầm ảnh hưởng",
+          "Trình bày logic, đầy đủ"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "type": "essay",
+      "score": 1,
+      "question": "So sánh thành tích của Brazil, Đức và Argentina tại các kỳ World Cup đã tổ chức. Đánh giá những yếu tố giúp các đội tuyển này trở thành những cường quốc bóng đá thế giới.",
+      "rubric": {
+        "maxScore": 1,
+        "requirements": [
+          "Nêu số lần vô địch cơ bản",
+          "So sánh thành tích nổi bật",
+          "Đánh giá nguyên nhân thành công",
+          "Lập luận rõ ràng và có dẫn chứng"
+        ]
+      }
+    }
+  ]
+}

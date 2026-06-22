@@ -1,0 +1,313 @@
+{
+  "title": "Đề thi Lịch sử FIFA World Cup 1930-2022",
+  "durationMinutes": 90,
+  "totalScore": 10,
+  "questions": [
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Kỳ World Cup đầu tiên được tổ chức vào năm nào?",
+      "options": ["1926", "1930", "1934", "1938"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Quốc gia nào đăng cai World Cup đầu tiên?",
+      "options": ["Argentina", "Brazil", "Uruguay", "Chile"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1930 là?",
+      "options": ["Argentina", "Brazil", "Uruguay", "Italy"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1934 là?",
+      "options": ["Italy", "Austria", "Germany", "Hungary"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển bảo vệ thành công chức vô địch World Cup năm 1938 là?",
+      "options": ["Uruguay", "Brazil", "Italy", "Hungary"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Hai kỳ World Cup nào bị hủy do Chiến tranh Thế giới thứ hai?",
+      "options": ["1942 và 1946", "1942 và 1950", "1942 và 1944", "1942 và 1948"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1950 được tổ chức tại quốc gia nào?",
+      "options": ["Brazil", "Argentina", "Uruguay", "Chile"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1950 là?",
+      "options": ["Brazil", "Uruguay", "Spain", "Sweden"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1954 được tổ chức tại đâu?",
+      "options": ["Germany", "Austria", "Switzerland", "France"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1954 là?",
+      "options": ["Hungary", "West Germany", "Austria", "Brazil"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Brazil lần đầu vô địch World Cup vào năm nào?",
+      "options": ["1950", "1954", "1958", "1962"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1962 được tổ chức tại quốc gia nào?",
+      "options": ["Chile", "Peru", "Brazil", "Mexico"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1962 là?",
+      "options": ["Brazil", "Czechoslovakia", "Chile", "Germany"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1966 là?",
+      "options": ["England", "Germany", "Portugal", "Brazil"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1970 được tổ chức tại đâu?",
+      "options": ["Argentina", "Mexico", "Brazil", "USA"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1970 là?",
+      "options": ["Italy", "Germany", "Brazil", "England"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1974 được tổ chức tại quốc gia nào?",
+      "options": ["France", "Belgium", "West Germany", "Netherlands"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1974 là?",
+      "options": ["Netherlands", "West Germany", "Brazil", "Poland"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Quốc gia đăng cai World Cup 1978 là?",
+      "options": ["Brazil", "Chile", "Argentina", "Uruguay"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1978 là?",
+      "options": ["Netherlands", "Brazil", "Argentina", "Italy"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1982 được tổ chức tại quốc gia nào?",
+      "options": ["Italy", "Spain", "Portugal", "France"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1982 là?",
+      "options": ["Brazil", "Italy", "Germany", "Argentina"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1986 được tổ chức tại quốc gia nào?",
+      "options": ["Mexico", "USA", "Brazil", "Argentina"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1986 là?",
+      "options": ["Germany", "Brazil", "Argentina", "France"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1990 được tổ chức tại đâu?",
+      "options": ["Spain", "Italy", "Germany", "France"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1990 là?",
+      "options": ["Argentina", "Brazil", "West Germany", "Italy"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1994 được tổ chức tại quốc gia nào?",
+      "options": ["USA", "Canada", "Mexico", "Brazil"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1994 là?",
+      "options": ["Italy", "Brazil", "Germany", "Argentina"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 1998 được tổ chức tại quốc gia nào?",
+      "options": ["Germany", "France", "Belgium", "Netherlands"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 1998 là?",
+      "options": ["Brazil", "France", "Croatia", "Netherlands"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Hai quốc gia đồng đăng cai World Cup 2002 là?",
+      "options": ["China - Japan", "Japan - South Korea", "Thailand - Japan", "Australia - Japan"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 2002 là?",
+      "options": ["Germany", "Brazil", "France", "Italy"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 2006 được tổ chức tại đâu?",
+      "options": ["Austria", "Germany", "Switzerland", "Italy"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 2006 là?",
+      "options": ["Italy", "France", "Germany", "Portugal"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 2010 được tổ chức tại quốc gia nào?",
+      "options": ["Egypt", "Morocco", "South Africa", "Nigeria"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 2010 là?",
+      "options": ["Netherlands", "Spain", "Germany", "Brazil"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 2014 được tổ chức tại quốc gia nào?",
+      "options": ["Argentina", "Chile", "Brazil", "Uruguay"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 2014 là?",
+      "options": ["Argentina", "Germany", "Brazil", "Netherlands"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 2018 được tổ chức tại quốc gia nào?",
+      "options": ["Russia", "Ukraine", "Poland", "Germany"],
+      "correctAnswer": 0
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 2018 là?",
+      "options": ["Belgium", "Croatia", "France", "England"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "World Cup 2022 được tổ chức tại quốc gia nào?",
+      "options": ["UAE", "Saudi Arabia", "Qatar", "Kuwait"],
+      "correctAnswer": 2
+    },
+    {
+      "type": "SingleChoice",
+      "score": 0.2,
+      "content": "Đội tuyển vô địch World Cup 2022 là?",
+      "options": ["France", "Argentina", "Croatia", "Brazil"],
+      "correctAnswer": 1
+    },
+    {
+      "type": "Essay",
+      "score": 1,
+      "content": "Phân tích những yếu tố giúp Argentina vô địch World Cup 2022.",
+      "sampleAnswer": "Argentina có chiến thuật hợp lý của HLV Lionel Scaloni, phong độ xuất sắc của Lionel Messi, sự tỏa sáng của các cầu thủ trẻ như Julian Alvarez và Enzo Fernandez cùng tinh thần đoàn kết mạnh mẽ. Đội bóng vượt qua thất bại ở trận ra quân để lên ngôi vô địch."
+    },
+    {
+      "type": "Essay",
+      "score": 1,
+      "content": "Trình bày các cột mốc quan trọng trong lịch sử FIFA World Cup từ năm 1930 đến 2022.",
+      "sampleAnswer": "1930 là kỳ World Cup đầu tiên tại Uruguay. 1942 và 1946 bị hủy do chiến tranh. Brazil thống trị giai đoạn 1958-1970. World Cup đầu tiên tại châu Á diễn ra năm 2002, tại châu Phi năm 2010 và tại Trung Đông năm 2022. Argentina là nhà vô địch World Cup gần nhất tính đến năm 2022."
+    }
+  ]
+}

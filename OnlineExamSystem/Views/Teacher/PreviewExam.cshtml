@@ -1,0 +1,86 @@
+﻿@model OnlineExamSystem.Models.Exam
+<h2>Làm bài</h2>
+<form id="examForm">
+    @foreach (var q in Model.Questions.OrderBy(x => x.Order))
+    {
+        <div class="question card p-2 mb-2">
+            <b>@q.Content</b>
+            @{
+                var options = string.IsNullOrEmpty(q.OptionsJson)
+                    ? new List<string>()
+                    : System.Text.Json.JsonSerializer.Deserialize<List<string>>(q.OptionsJson) ?? new List<string>();
+            }
+            @if (q.Type.ToString() == "SingleChoice")
+            {
+                foreach (var op in options)
+                {
+                    <div>
+                        <label>
+                            <input type="radio" name="q_@q.Id" value="@op" required />
+                            @op
+                        </label>
+                    </div>
+                }
+            }
+            @if (q.Type.ToString() == "MultipleChoice")
+            {
+                foreach (var op in options)
+                {
+                    <div>
+                        <label>
+                            <input type="checkbox" name="q_@q.Id" value="@op" />
+                            @op
+                        </label>
+                    </div>
+                }
+            }
+            @if (q.Type.ToString() == "TrueFalse")
+            {
+                <div>
+                    <label>
+                        <input type="radio" name="q_@q.Id" value="Đúng" required />
+                        Đúng
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="radio" name="q_@q.Id" value="Sai" required />
+                        Sai
+                    </label>
+                </div>
+            }
+            @if (q.Type.ToString() == "FillBlank")
+            {
+                <input class="form-control" required />
+            }
+            @if (q.Type.ToString() == "Essay")
+            {
+                <textarea class="form-control" required></textarea>
+            }
+        </div>
+    }
+    <button class="btn btn-success">Nộp bài</button>
+</form>
+<script>
+    document.getElementById("examForm").addEventListener("submit", function (e) {
+        let valid = true;
+        document.querySelectorAll(".question").forEach(q => {
+
+            let answered = false;
+
+            q.querySelectorAll("input, textarea").forEach(i => {
+                if ((i.type === "radio" || i.type === "checkbox") && i.checked)
+                    answered = true;
+                else if (i.value && i.value.trim() !== "")
+                    answered = true;
+            });
+            if (!answered) valid = false;
+        });
+        if (!valid)
+        {
+            alert("Phải làm hết câu!");
+            e.preventDefault();
+        }
+    });
+</script>
