@@ -12,9 +12,11 @@ public class RegisterTests : IDisposable
     {
         var options = new ChromeOptions();
 
-        //options.AddArgument("--headless=new");
+        options.AddArgument("--headless=new");
         options.AddArgument("--no-sandbox");
         options.AddArgument("--disable-dev-shm-usage");
+        options.AddArgument("--disable-gpu");
+        options.AddArgument("--window-size=1920,1080");
         options.AcceptInsecureCertificates = true;
 
         _driver = new ChromeDriver(options);
