@@ -1,6 +1,4 @@
-using System.Net;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
+using System.Diagnostics;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -11,24 +9,28 @@ namespace OnlineExamSystem.Tests;
 public class RegisterTests : IDisposable
 {
     private readonly IWebDriver _driver;
-    private readonly CustomWebApplicationFactory _factory;
-    private readonly string _baseUrl;
+    private readonly Process _appProcess;
+    private readonly string _baseUrl = "https://127.0.0.1:7195";
 
     public RegisterTests()
     {
-        _factory = new CustomWebApplicationFactory();
+        var appProjectPath = Path.GetFullPath(
+            Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "OnlineExamSystem"));
 
-        // Start real server for Selenium (not only TestServer)
-        var client = _factory.WithWebHostBuilder(builder =>
+        var psi = new ProcessStartInfo
         {
-            builder.UseKestrel();
-            builder.UseUrls("http://127.0.0.1:0"); // random free port
-        }).CreateClient(new WebApplicationFactoryClientOptions
-        {
-            AllowAutoRedirect = false
-        });
+            FileName = "dotnet",
+            Arguments = "run --no-build --urls https://127.0.0.1:7195",
+            WorkingDirectory = appProjectPath,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
 
-        _baseUrl = client.BaseAddress!.ToString().TrimEnd('/');
+        _appProcess = Process.Start(psi) ?? throw new InvalidOperationException("Cannot start app process.");
+
+        WaitForServerReady(_baseUrl, TimeSpan.FromSeconds(60));
 
         var options = new ChromeOptions();
         options.AddArgument("--headless=new");
@@ -36,6 +38,7 @@ public class RegisterTests : IDisposable
         options.AddArgument("--disable-dev-shm-usage");
         options.AddArgument("--disable-gpu");
         options.AddArgument("--window-size=1920,1080");
+        options.AcceptInsecureCertificates = true;
 
         _driver = new ChromeDriver(options);
     }
@@ -45,7 +48,7 @@ public class RegisterTests : IDisposable
     {
         _driver.Navigate().GoToUrl($"{_baseUrl}/Auth/Register");
 
-        var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+        var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
         wait.Until(d => d.FindElement(By.Name("username")));
 
         _driver.FindElement(By.Name("username")).SendKeys("student01");
@@ -60,10 +63,50 @@ public class RegisterTests : IDisposable
         Assert.StartsWith(_baseUrl, _driver.Url);
     }
 
+    private static void WaitForServerReady(string baseUrl, TimeSpan timeout)
+    {
+        using var http = new HttpClient(new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (_, _, _, _) => true
+        });
+
+        var sw = Stopwatch.StartNew();
+        while (sw.Elapsed < timeout)
+        {
+            try
+            {
+                var resp = http.GetAsync($"{baseUrl}/Auth/Login").GetAwaiter().GetResult();
+                if ((int)resp.StatusCode < 500) return;
+            }
+            catch
+            {
+                // app chưa lên xong
+            }
+
+            Thread.Sleep(500);
+        }
+
+        throw new TimeoutException($"Server not ready at {baseUrl} within {timeout.TotalSeconds}s.");
+    }
+
     public void Dispose()
     {
-        _driver.Quit();
-        _driver.Dispose();
-        _factory.Dispose();
+        try
+        {
+            _driver.Quit();
+            _driver.Dispose();
+        }
+        catch { }
+
+        try
+        {
+            if (!_appProcess.HasExited)
+            {
+                _appProcess.Kill(entireProcessTree: true);
+                _appProcess.WaitForExit(5000);
+            }
+            _appProcess.Dispose();
+        }
+        catch { }
     }
 }
