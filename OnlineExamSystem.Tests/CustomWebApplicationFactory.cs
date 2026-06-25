@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using OnlineExamSystem.Data;
 using OnlineExamSystem;
+using OnlineExamSystem.Data;
 
 namespace OnlineExamSystem.Tests;
 
@@ -15,21 +15,27 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
         builder.ConfigureServices(services =>
         {
-            // Remove SQL Server registration
-            var descriptor = services.SingleOrDefault(
+            // 1) Remove existing DbContext registration
+            var dbContextDescriptor = services.SingleOrDefault(
                 d => d.ServiceType == typeof(DbContextOptions<OnlineExamSystemContext>));
-            if (descriptor != null)
-            {
-                services.Remove(descriptor);
-            }
+            if (dbContextDescriptor is not null)
+                services.Remove(dbContextDescriptor);
 
-            // Use InMemory DB for tests
+            // 2) Remove SQL Server provider registrations
+            var sqlProviderDescriptors = services
+                .Where(d => d.ServiceType.FullName?.Contains("SqlServer", StringComparison.OrdinalIgnoreCase) == true)
+                .ToList();
+
+            foreach (var d in sqlProviderDescriptors)
+                services.Remove(d);
+
+            // 3) Register InMemory provider
             services.AddDbContext<OnlineExamSystemContext>(options =>
             {
                 options.UseInMemoryDatabase("OnlineExamSystem_TestDb");
             });
 
-            // Ensure DB is created
+            // 4) Build & init db
             var sp = services.BuildServiceProvider();
             using var scope = sp.CreateScope();
             var db = scope.ServiceProvider.GetRequiredService<OnlineExamSystemContext>();
