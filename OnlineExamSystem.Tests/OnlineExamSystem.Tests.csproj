@@ -16,6 +16,7 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="149.0.7827.15500" />
     <PackageReference Include="xunit" Version="2.9.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.0-preview.6.25358.103" />
   </ItemGroup>
 
 <ItemGroup>
