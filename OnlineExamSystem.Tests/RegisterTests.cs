@@ -20,7 +20,7 @@ public class RegisterTests : IDisposable
         var psi = new ProcessStartInfo
         {
             FileName = "dotnet",
-            Arguments = "run --no-build --urls http://127.0.0.1:7195",
+            Arguments = "run --urls http://127.0.0.1:7195",
             WorkingDirectory = appProjectPath,
             RedirectStandardOutput = true,
             RedirectStandardError = true,
