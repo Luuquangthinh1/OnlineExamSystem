@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using OnlineExamSystem; // <-- namespace của web app
 
 namespace OnlineExamSystem.Tests;
 
