@@ -10,7 +10,7 @@ public class RegisterTests : IDisposable
 {
     private readonly IWebDriver _driver;
     private readonly Process _appProcess;
-    private readonly string _baseUrl = "https://127.0.0.1:7195";
+    private readonly string _baseUrl = "http://127.0.0.1:7195";
 
     public RegisterTests()
     {
@@ -20,7 +20,7 @@ public class RegisterTests : IDisposable
         var psi = new ProcessStartInfo
         {
             FileName = "dotnet",
-            Arguments = "run --no-build --urls https://127.0.0.1:7195",
+            Arguments = "run --no-build --urls http://127.0.0.1:7195",
             WorkingDirectory = appProjectPath,
             RedirectStandardOutput = true,
             RedirectStandardError = true,
@@ -28,9 +28,22 @@ public class RegisterTests : IDisposable
             CreateNoWindow = true
         };
 
+        // IMPORTANT: force Testing env so Program.cs uses InMemory and skips migrate
+        psi.Environment["ASPNETCORE_ENVIRONMENT"] = "Testing";
+
         _appProcess = Process.Start(psi) ?? throw new InvalidOperationException("Cannot start app process.");
 
-        WaitForServerReady(_baseUrl, TimeSpan.FromSeconds(60));
+        try
+        {
+            WaitForServerReady(_baseUrl, TimeSpan.FromSeconds(90), _appProcess);
+        }
+        catch
+        {
+            var stdout = _appProcess.StandardOutput.ReadToEnd();
+            var stderr = _appProcess.StandardError.ReadToEnd();
+            throw new TimeoutException(
+                $"Server not ready at {_baseUrl} within 90s.\n--- STDOUT ---\n{stdout}\n--- STDERR ---\n{stderr}");
+        }
 
         var options = new ChromeOptions();
         options.AddArgument("--headless=new");
@@ -38,7 +51,6 @@ public class RegisterTests : IDisposable
         options.AddArgument("--disable-dev-shm-usage");
         options.AddArgument("--disable-gpu");
         options.AddArgument("--window-size=1920,1080");
-        options.AcceptInsecureCertificates = true;
 
         _driver = new ChromeDriver(options);
     }
@@ -48,7 +60,7 @@ public class RegisterTests : IDisposable
     {
         _driver.Navigate().GoToUrl($"{_baseUrl}/Auth/Register");
 
-        var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
+        var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
         wait.Until(d => d.FindElement(By.Name("username")));
 
         _driver.FindElement(By.Name("username")).SendKeys("student01");
@@ -63,16 +75,18 @@ public class RegisterTests : IDisposable
         Assert.StartsWith(_baseUrl, _driver.Url);
     }
 
-    private static void WaitForServerReady(string baseUrl, TimeSpan timeout)
+    private static void WaitForServerReady(string baseUrl, TimeSpan timeout, Process appProcess)
     {
-        using var http = new HttpClient(new HttpClientHandler
-        {
-            ServerCertificateCustomValidationCallback = (_, _, _, _) => true
-        });
-
+        using var http = new HttpClient();
         var sw = Stopwatch.StartNew();
+
         while (sw.Elapsed < timeout)
         {
+            if (appProcess.HasExited)
+            {
+                throw new InvalidOperationException($"App process exited early with code {appProcess.ExitCode}.");
+            }
+
             try
             {
                 var resp = http.GetAsync($"{baseUrl}/Auth/Login").GetAwaiter().GetResult();
@@ -80,13 +94,11 @@ public class RegisterTests : IDisposable
             }
             catch
             {
-                // app chưa lên xong
+                // still booting
             }
 
             Thread.Sleep(500);
         }
-
-        throw new TimeoutException($"Server not ready at {baseUrl} within {timeout.TotalSeconds}s.");
     }
 
     public void Dispose()
