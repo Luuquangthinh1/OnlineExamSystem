@@ -69,12 +69,10 @@ app.MapControllers();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Auth}/{action=Login}/{id?}");
-
-using (var scope = app.Services.CreateScope())
+if (!app.Environment.IsEnvironment("Testing"))
 {
-    var db = scope.ServiceProvider
-        .GetRequiredService<OnlineExamSystemContext>();
-
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<OnlineExamSystemContext>();
     db.Database.Migrate();
 }
 
