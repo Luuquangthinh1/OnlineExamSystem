@@ -10,7 +10,6 @@ public class RegisterTests : IDisposable
 {
     private readonly IWebDriver _driver;
     private readonly Process _appProcess;
-    private readonly string _baseUrl = "http://127.0.0.1:7195";
 
     public RegisterTests()
     {
