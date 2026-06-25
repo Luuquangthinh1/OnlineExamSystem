@@ -8,6 +8,7 @@ namespace OnlineExamSystem.Tests;
 
 public class RegisterTests : IDisposable
 {
+    private const string BaseUrl = "http://127.0.0.1:7195";
     private readonly IWebDriver _driver;
     private readonly Process _appProcess;
 
@@ -19,7 +20,7 @@ public class RegisterTests : IDisposable
         var psi = new ProcessStartInfo
         {
             FileName = "dotnet",
-            Arguments = "run --urls http://127.0.0.1:7195 --no-launch-profile",
+            Arguments = $"run --urls {BaseUrl} --no-launch-profile",
             WorkingDirectory = appProjectPath,
             RedirectStandardOutput = true,
             RedirectStandardError = true,
@@ -34,14 +35,14 @@ public class RegisterTests : IDisposable
 
         try
         {
-            WaitForServerReady(_baseUrl, TimeSpan.FromSeconds(90), _appProcess);
+            WaitForServerReady(BaseUrl, TimeSpan.FromSeconds(90), _appProcess);
         }
         catch
         {
             var stdout = _appProcess.StandardOutput.ReadToEnd();
             var stderr = _appProcess.StandardError.ReadToEnd();
             throw new TimeoutException(
-                $"Server not ready at {_baseUrl} within 90s.\n--- STDOUT ---\n{stdout}\n--- STDERR ---\n{stderr}");
+                $"Server not ready at {BaseUrl} within 90s.\n--- STDOUT ---\n{stdout}\n--- STDERR ---\n{stderr}");
         }
 
         var options = new ChromeOptions();
@@ -57,7 +58,7 @@ public class RegisterTests : IDisposable
     [Fact]
     public void Register_Student_Success()
     {
-        _driver.Navigate().GoToUrl($"{_baseUrl}/Auth/Register");
+        _driver.Navigate().GoToUrl($"{BaseUrl}/Auth/Register");
 
         var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
         wait.Until(d => d.FindElement(By.Name("username")));
@@ -70,8 +71,8 @@ public class RegisterTests : IDisposable
 
         _driver.FindElement(By.CssSelector("button[type='submit']")).Click();
 
-        wait.Until(d => d.Url.StartsWith(_baseUrl, StringComparison.OrdinalIgnoreCase));
-        Assert.StartsWith(_baseUrl, _driver.Url);
+        wait.Until(d => d.Url.StartsWith(BaseUrl, StringComparison.OrdinalIgnoreCase));
+        Assert.StartsWith(BaseUrl, _driver.Url);
     }
 
     private static void WaitForServerReady(string baseUrl, TimeSpan timeout, Process appProcess)
