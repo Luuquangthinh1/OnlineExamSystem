@@ -1,3 +1,5 @@
+using System.Net;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -16,7 +18,12 @@ public class RegisterTests : IDisposable
     {
         _factory = new CustomWebApplicationFactory();
 
-        using var client = _factory.CreateClient(new WebApplicationFactoryClientOptions
+        // Start real server for Selenium (not only TestServer)
+        var client = _factory.WithWebHostBuilder(builder =>
+        {
+            builder.UseKestrel();
+            builder.UseUrls("http://127.0.0.1:0"); // random free port
+        }).CreateClient(new WebApplicationFactoryClientOptions
         {
             AllowAutoRedirect = false
         });
@@ -29,7 +36,6 @@ public class RegisterTests : IDisposable
         options.AddArgument("--disable-dev-shm-usage");
         options.AddArgument("--disable-gpu");
         options.AddArgument("--window-size=1920,1080");
-        options.AcceptInsecureCertificates = true;
 
         _driver = new ChromeDriver(options);
     }
@@ -38,7 +44,9 @@ public class RegisterTests : IDisposable
     public void Register_Student_Success()
     {
         _driver.Navigate().GoToUrl($"{_baseUrl}/Auth/Register");
-        Thread.Sleep(2000);
+
+        var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+        wait.Until(d => d.FindElement(By.Name("username")));
 
         _driver.FindElement(By.Name("username")).SendKeys("student01");
         _driver.FindElement(By.Name("password")).SendKeys("123456");
@@ -47,14 +55,15 @@ public class RegisterTests : IDisposable
         role.SelectByText("Student");
 
         _driver.FindElement(By.CssSelector("button[type='submit']")).Click();
-        Thread.Sleep(3000);
 
+        wait.Until(d => d.Url.StartsWith(_baseUrl, StringComparison.OrdinalIgnoreCase));
         Assert.StartsWith(_baseUrl, _driver.Url);
     }
 
     public void Dispose()
     {
         _driver.Quit();
+        _driver.Dispose();
         _factory.Dispose();
     }
 }
